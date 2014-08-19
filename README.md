@@ -5,8 +5,10 @@ fishline
 
 Install
 -------
-Clone fishline where you want
+Clone fishline where you want:
+
 `git clone https://github.com/0rax/fishline.git/ ~/.config/fish/`
+
 Set in your `config.fish` this fishline path and source it.
 ```sh
 set FLINE_PATH $HOME/.config/fish/fishline
@@ -25,6 +27,7 @@ Config
 
 ### Choose a theme
 You can choose a theme within those availlable in this repository or by creating yours.
+
 To use use it just source it in your `config.fish`
 ```sh
 source $FLINE_PATH/themes/default.fish

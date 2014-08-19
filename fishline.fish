@@ -4,8 +4,6 @@
 # Add VF support
 # Add GIT support
 # Add hostname + user
-# Theming ? like powerline with FG and BG ?
-# Theme sleection
 
 function __close_prev
 	if set -q __bcolor

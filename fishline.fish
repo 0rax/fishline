@@ -1,6 +1,11 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 # Powerline Glyphs →  ⇡      
+# Add VF support
+# Add GIT support
+# Add hostname + user
+# Theming ? like powerline with FG and BG ?
+# Theme sleection
 
 function __status
 	set -l slast $argv[1]

@@ -3,6 +3,8 @@ fishline
 
 **Powerline prompt for Fish Shell in Fish Shell.**
 
+![fishline_preview](https://raw.githubusercontent.com/0rax/fishline/master/prompt.png "Fishline Preview")
+
 Install
 -------
 Clone fishline where you want:

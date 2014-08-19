@@ -16,12 +16,6 @@ function __close_prev
 	set_color -b $argv[1] $argv[2]
 end
 
-function FLINE_N
-	__close_prev normal normal
-	set -e __bcolor
-	echo
-end
-
 function fishline
 
 	set -l slast $argv[1]
@@ -38,7 +32,7 @@ function fishline
 	end
 	set -e __bcolor
 	for seg in $FLINE_PROMPT
-		eval FLINE_$seg $status
+		eval FLINE_$seg $slast
 	end
 	__close_prev normal normal
 	set -e __bcolor

@@ -4,7 +4,7 @@
 source $FLINE_PATH/themes/default.fish
 source $FLINE_PATH/styles/powerline.fish
 #source $FLINE_PATH/styles/default.fish
-set FLINE_PROMPT VFISH STATUS PWD WRITE N ARROW
+set FLINE_PROMPT VFISH STATUS PWD WRITE GIT N ARROW
 
 function __close_prev
 	if set -q __bcolor

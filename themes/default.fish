@@ -7,18 +7,22 @@ set FLINE_FG_HOME		normal
 set FLINE_BG_PWD		444
 set FLINE_FG_PWD		normal
 
-# Color for Status segment
+# Color for STATUS segment
 set FLINE_BG_STATUS		A22
 set FLINE_FG_STATUS		normal
 
-# Color for write segment
+# Color for WRITE segment
 set FLINE_BG_WRITE		A22
 set FLINE_FG_WRITE		normal
 
-# Color for arrow  segment
+# Color for ARROW  segment
 set FLINE_BG_ARROW		444
 set FLINE_FG_ARROW		normal
 
-# Color for vfish  segment
-set FLINE_BG_VFISH		292
+# Color for VFISH  segment
+set FLINE_BG_VFISH		green
 set FLINE_FG_VFISH		black
+
+# Color for git segment
+set FLINE_BG_GIT		yellow
+set FLINE_FG_GIT		black

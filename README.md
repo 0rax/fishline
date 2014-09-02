@@ -24,4 +24,4 @@ function fish_prompt
 end
 ```
 
-[More informations about installation and configuration availlable in the wiki.](https://github.com/0rax/fishline/blob/master/Home "Fishline Wiki")
+[More informations about installation and configuration availlable in the wiki.](https://github.com/0rax/fishline/wiki "Fishline Wiki")

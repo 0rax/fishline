@@ -24,5 +24,7 @@ set FLINE_BG_VFISH		green
 set FLINE_FG_VFISH		black
 
 # Color for git segment
-set FLINE_BG_GIT		yellow
-set FLINE_FG_GIT		black
+set FLINE_BG_GIT_CLEAN		yellow
+set FLINE_FG_GIT_CLEAN		black
+set FLINE_BG_GIT_DIRTY		purple
+set FLINE_FG_GIT_DIRTY		black

@@ -9,7 +9,14 @@ function FLINE_GIT
 		set -l staged (cat /tmp/gitstatus | grep "Changes to be committed")
 		set -l unstaged (cat /tmp/gitstatus | grep "Changes not staged for commit")
 		set -l untracked (cat /tmp/gitstatus | grep "Untracked files")
-		__close_prev $FLINE_BG_GIT $FLINE_FG_GIT
+		if test -n "$staged" -o -n "$unstaged" -o -n "$untracked"
+		   set dirty yes
+		end
+		if set -q dirty
+		   __close_prev $FLINE_BG_GIT_DIRTY $FLINE_FG_GIT_DIRTY
+		else
+		   __close_prev $FLINE_BG_GIT_CLEAN $FLINE_FG_GIT_CLEAN
+		end
 		echo -n $FLINE_GIT_BRANCH
 		echo -n "$branch "
 		if test -n "$untracked"

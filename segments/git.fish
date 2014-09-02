@@ -12,6 +12,7 @@ function FLINE_GIT
 		__close_prev $FLINE_BG_GIT $FLINE_FG_GIT
 		echo -n $FLINE_GIT_BRANCH
 		echo -n "$branch "
+		printf $untracked
 		if test -n $untracked
 			echo -n "+ "
 		end

@@ -3,10 +3,10 @@
 
 source $FLINE_PATH/themes/default.fish
 source $FLINE_PATH/styles/powerline.fish
-#source $FLINE_PATH/styles/default.fish
-set FLINE_PROMPT VFISH STATUS PWD WRITE GIT N ARROW
+set FLINE_PROMPT VFISH STATUS PWD GIT WRITE N ARROW
 
 function __close_prev
+
 	if set -q __bcolor
 		set_color -b $argv[1]
 		set_color $__bcolor
@@ -15,6 +15,7 @@ function __close_prev
 	end
 	set -g __bcolor $argv[1]
 	set_color -b $argv[1] $argv[2]
+
 end
 
 function fishline
@@ -34,4 +35,5 @@ function fishline
 	end
 	__close_prev normal normal
 	set -e __bcolor
+
 end

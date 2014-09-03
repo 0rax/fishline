@@ -9,8 +9,8 @@ function FLINE_GIT
 		set -l staged (cat /tmp/gitstatus | grep "Changes to be committed")
 		set -l unstaged (cat /tmp/gitstatus | grep "Changes not staged for commit")
 		set -l untracked (cat /tmp/gitstatus | grep "Untracked files")
-		set -l ahead (cat /tmp/gitstatus | grep "Your branch is ahead" | grep -o '[0-9]\+ commits.' | cut -d" " -f1)
-		set -l behind (cat /tmp/gitstatus | grep "Your branch is behind" | grep -o '[0-9]\+ commits.' | cut -d" " -f1)
+		set -l ahead (cat /tmp/gitstatus | grep "Your branch is ahead" | grep -o '[0-9]\+ commit' | cut -d" " -f1)
+		set -l behind (cat /tmp/gitstatus | grep "Your branch is behind" | grep -o '[0-9]\+ commit' | cut -d" " -f1)
 		if test -n "$staged" -o -n "$unstaged" -o -n "$untracked"
 		   set dirty yes
 		end

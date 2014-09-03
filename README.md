@@ -7,7 +7,7 @@ fishline
 
 Install
 -------
-Clone fishline where you want:
+Clone fishline where you want, here in the fish's config folder:
 
 `git clone https://github.com/0rax/fishline.git/ ~/.config/fish/`
 

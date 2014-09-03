@@ -32,4 +32,5 @@ function FLINE_GIT
 		end
 	end
 	rm -f /tmp/gitstatus
+
 end

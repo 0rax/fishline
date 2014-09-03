@@ -19,4 +19,5 @@ function FLINE_PWD
 		end
 		echo -n " "
 	end
+
 end

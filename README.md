@@ -9,7 +9,7 @@ Install
 -------
 Clone fishline where you want, here in the fish's config folder:
 
-`git clone https://github.com/0rax/fishline.git/ ~/.config/fish/`
+`git clone https://github.com/0rax/fishline.git/ ~/.config/fish/fishline`
 
 Set in your `config.fish` this fishline path and source it.
 ```sh

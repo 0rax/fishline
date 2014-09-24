@@ -1,8 +1,17 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
+# Powerline Glyphs →  ⇡       ⚡ ± ✘ ⚙ ➦
+set FLINE_CLOSE				""
+set FLINE_SEPARATOR			"  "
+set FLINE_WRITE_LOCK		"  "
+set FLINE_GIT_BRANCH		"  "
+set FLINE_GIT_UNTRACKED		"× "
+set FLINE_GIT_AHEAD			"⇡ "
+set FLINE_GIT_BEHIND		"⇡ "
+set FLINE_ARROW_SIGN		" → "
+
 source $FLINE_PATH/themes/default.fish
-source $FLINE_PATH/styles/powerline.fish
 set FLINE_PROMPT VFISH STATUS PWD GIT WRITE N ARROW
 
 function __close_prev

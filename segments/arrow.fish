@@ -1,5 +1,6 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
+# Might add color + symbol specific for user/root
 
 function FLINE_ARROW
 

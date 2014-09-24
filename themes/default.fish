@@ -24,7 +24,15 @@ set FLINE_BG_VFISH			green
 set FLINE_FG_VFISH			black
 
 # Color for GIT segment
-set FLINE_BG_GIT_CLEAN			yellow
-set FLINE_FG_GIT_CLEAN			black
-set FLINE_BG_GIT_DIRTY			purple
-set FLINE_FG_GIT_DIRTY			white
+set FLINE_BG_GIT_CLEAN		yellow
+set FLINE_FG_GIT_CLEAN		black
+set FLINE_BG_GIT_DIRTY		purple
+set FLINE_FG_GIT_DIRTY		white
+
+# Color for CLOCK segment
+set FLINE_BG_CLOCK			F60
+set FLINE_FG_CLOCK			black
+
+# Color for USERHOST segment
+set FLINE_BG_USERHOST		1F1209
+set FLINE_FG_USERHOST		white

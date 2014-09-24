@@ -14,6 +14,10 @@ set FLINE_ARROW_SIGN		" → "
 source $FLINE_PATH/themes/default.fish
 set FLINE_PROMPT VFISH STATUS PWD GIT WRITE N ARROW
 
+for seg in (find $FLINE_PATH/segments -name '*.fish')
+    source $seg
+end
+
 function __close_prev
 
 	if set -q __bcolor
@@ -35,9 +39,6 @@ function fishline
 		set slast 0
 	end
 
-	for seg in (find $FLINE_PATH/segments -name '*.fish')
-		source $seg
-	end
 	set -e __bcolor
 	for seg in $FLINE_PROMPT
 		eval FLINE_$seg $slast

@@ -1,6 +1,10 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
+for seg in (find $FLINE_PATH/segments -name '*.fish')
+    source $seg
+end
+
 source $FLINE_PATH/themes/default.fish
 source $FLINE_PATH/styles/powerline.fish
 set FLINE_PROMPT VFISH STATUS PWD GIT WRITE N ARROW
@@ -26,9 +30,6 @@ function fishline
 		set slast 0
 	end
 
-	for seg in (find $FLINE_PATH/segments -name '*.fish')
-		source $seg
-	end
 	set -e __bcolor
 	for seg in $FLINE_PROMPT
 		eval FLINE_$seg $slast

@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function FLINE_GIT
+function FLSEG_GIT
 
 	git status ^^ /dev/null > /tmp/gitstatus
 	if test $status -eq 0
@@ -15,20 +15,20 @@ function FLINE_GIT
 		   set dirty yes
 		end
 		if set -q dirty
-		   __close_prev $FLINE_BG_GIT_DIRTY $FLINE_FG_GIT_DIRTY
+		   __close_prev $FLCLR_GIT_BG_DIRTY $FLCLR_GIT_FG_DIRTY
 		else
-		   __close_prev $FLINE_BG_GIT_CLEAN $FLINE_FG_GIT_CLEAN
+		   __close_prev $FLCLR_GIT_BG_CLEAN $FLCLR_GIT_FG_CLEAN
 		end
-		echo -n $FLINE_GIT_BRANCH
+		echo -n $FLSYM_GIT_BRANCH
 		echo -n "$branch "
 		if test -n "$ahead"
-			echo -n "$ahead$FLINE_GIT_AHEAD"
+			echo -n "$ahead$FLSYM_GIT_AHEAD"
 		end
 		if test -n "$behind"
-			echo -n "$behind$FLINE_GIT_BEHIND"
+			echo -n "$behind$FLSYM_GIT_BEHIND"
 		end
 		if test -n "$untracked"
-			echo -n "$FLINE_GIT_UNTRACKED"
+			echo -n "$FLSYM_GIT_UNTRACKED"
 		end
 	end
 	rm -f /tmp/gitstatus

@@ -2,9 +2,9 @@
 # -*-  mode:fish; tab-width:4  -*-
 # Might add color + symbol specific for user/root
 
-function FLINE_ARROW
+function FLSEG_ARROW
 
-	__close_prev $FLINE_BG_ARROW $FLINE_FG_ARROW
-	echo -n "$FLINE_ARROW_SIGN"
+	__close_prev $FLCLR_ARROW_BG $FLCLR_ARROW_FG
+	echo -n "$FLSYM_ARROW"
 
 end

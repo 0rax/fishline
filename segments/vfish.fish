@@ -1,10 +1,10 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function FLINE_VFISH
+function FLSEG_VFISH
 
 	if set -q VIRTUAL_ENV
-		__close_prev $FLINE_BG_VFISH $FLINE_FG_VFISH
+		__close_prev $FLCLR_VFISH_BG $FLCLR_VFISH_FG
 		set vpath (echo $VIRTUAL_ENV | sed 's/\/.*\///')
 		echo -n " $vpath "
 	end

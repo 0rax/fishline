@@ -1,12 +1,12 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function FLINE_FULLPWD
+function FLSEG_FULLPWD
 
 	set -l pwd (pwd)
 	set -l home (echo "$HOME" | sed 's/\//\\\\\//g')
 
-	__close_prev $FLINE_BG_PWD $FLINE_FG_PWD
+	__close_prev $FLCLR_FULLPWD_BG $FLCLR_FULLPWD_FG
 	echo -n " "
 	if echo $pwd | grep "^$HOME" >> /dev/null
 		echo -n "~"

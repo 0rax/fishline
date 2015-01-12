@@ -1,11 +1,11 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function FLINE_WRITE
+function FLSEG_WRITE
 
 	if not test -w .
-		__close_prev $FLINE_BG_WRITE $FLINE_FG_WRITE
-		echo -n "$FLINE_WRITE_LOCK"
+		__close_prev $FLCLR_WRITE_BG $FLCLR_WRITE_FG
+		echo -n "$FLSYM_WRITE_LOCK"
 	end
 
 end

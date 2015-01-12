@@ -1,9 +1,9 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function FLINE_USERHOST
+function FLSEG_USERHOST
 
-	__close_prev $FLINE_BG_USERHOST $FLINE_FG_USERHOST
+	__close_prev $FLCLR_USERHOST_BG $FLCLR_USERHOST_FG
 	echo -n " $USER"'@'(hostname)" "
 
 end

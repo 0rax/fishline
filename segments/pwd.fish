@@ -1,21 +1,21 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function FLINE_PWD
+function FLSEG_PWD
 
 	set -l pwd (prompt_pwd)
 
 	if echo $pwd | grep '^~' >> /dev/null
-		__close_prev $FLINE_BG_HOME $FLINE_FG_HOME
+		__close_prev $FLCLR_PWD_BG_HOME $FLCLR_PWD_FG_HOME
 		echo -n " ~ "
 	end
 
 	if not echo $pwd | grep '^~$' >> /dev/null
-		__close_prev $FLINE_BG_PWD $FLINE_FG_PWD
+		__close_prev $FLCLR_PWD_BG $FLCLR_PWD_FG
 		if echo $pwd | grep '^/$' >> /dev/null
 			printf " /"
 		else
-			echo -n $pwd | sed "s/~//; s/\// /; s/\//$FLINE_SEPARATOR/g"
+			echo -n $pwd | sed "s/~//; s/\// /; s/\//$FLSYM_SEPARATOR/g"
 		end
 		echo -n " "
 	end

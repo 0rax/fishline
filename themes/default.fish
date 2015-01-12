@@ -1,38 +1,41 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-# Color for PWD segment
-set FLINE_BG_HOME			26A
-set FLINE_FG_HOME			normal
-set FLINE_BG_PWD			444
-set FLINE_FG_PWD			normal
+# Color for PWD and FULLPWD segment
+set FLCLR_PWD_BG_HOME		26A
+set FLCLR_PWD_FG_HOME		normal
+set FLCLR_PWD_BG			444
+set FLCLR_PWD_FG			normal
+set FLCLR_FULLPWD_BG		$FLCLR_PWD_BG
+set FLCLR_FULLPWD_FG		$FLCLR_PWD_FG
+
 
 # Color for STATUS segment
-set FLINE_BG_STATUS			A22
-set FLINE_FG_STATUS			normal
+set FLCLR_STATUS_BG			A22
+set FLCLR_STATUS_FG			normal
 
 # Color for WRITE segment
-set FLINE_BG_WRITE			A22
-set FLINE_FG_WRITE			normal
+set FLCLR_WRITE_BG			A22
+set FLCLR_WRITE_FG			normal
 
 # Color for ARROW  segment
-set FLINE_BG_ARROW			444
-set FLINE_FG_ARROW			normal
+set FLCLR_ARROW_BG			444
+set FLCLR_ARROW_FG			normal
 
 # Color for VFISH  segment
-set FLINE_BG_VFISH			green
-set FLINE_FG_VFISH			black
+set FLCLR_VFISH_BG			green
+set FLCLR_VFISH_FG			black
 
 # Color for GIT segment
-set FLINE_BG_GIT_CLEAN		yellow
-set FLINE_FG_GIT_CLEAN		black
-set FLINE_BG_GIT_DIRTY		purple
-set FLINE_FG_GIT_DIRTY		white
+set FLCLR_GIT_BG_CLEAN		yellow
+set FLCLR_GIT_FG_CLEAN		black
+set FLCLR_GIT_BG_DIRTY		purple
+set FLCLR_GIT_FG_DIRTY		white
 
 # Color for CLOCK segment
-set FLINE_BG_CLOCK			F60
-set FLINE_FG_CLOCK			black
+set FLCLR_CLOCK_BG			F60
+set FLCLR_CLOCK_FG			black
 
 # Color for USERHOST segment
-set FLINE_BG_USERHOST		1F1209
-set FLINE_FG_USERHOST		white
+set FLCLR_USERHOST_BG		1F1209
+set FLCLR_USERHOST_FG		white

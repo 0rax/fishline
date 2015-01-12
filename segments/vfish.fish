@@ -4,7 +4,7 @@
 function FLSEG_VFISH
 
 	if set -q VIRTUAL_ENV
-		__close_prev $FLCLR_VFISH_BG $FLCLR_VFISH_FG
+		FLINT_CLOSE $FLCLR_VFISH_BG $FLCLR_VFISH_FG
 		set vpath (echo $VIRTUAL_ENV | sed 's/\/.*\///')
 		echo -n " $vpath "
 	end

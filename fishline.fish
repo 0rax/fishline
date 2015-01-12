@@ -18,32 +18,32 @@ for seg in (find $FLINE_PATH/segments -name '*.fish')
     source $seg
 end
 
-function __close_prev
+function FLINT_CLOSE
 
 	if set -q __bcolor
 		set_color -b $argv[1]
-		set_color $__bcolor
+		set_color $FLINT_BCOLOR
 		echo -n "$FLSYM_CLOSE"
 	set_color normal
 	end
-	set -g __bcolor $argv[1]
+	set -g FLINT_BCOLOR $argv[1]
 	set_color -b $argv[1] $argv[2]
-
+ 
 end
 
 function fishline
 
-	set -g FLINE_STATUS $argv[1]
-	if not set -q FLINE_STATUS[1]
+	set -g FLINT_STATUS $argv[1]
+	if not set -q FLINT_STATUS[1]
 		echo "Warning: last status not passed as first argument to fishline,"
-		set FLINE_STATUS 0
+		set FLINT_STATUS 0
 	end
 
-	set -e __bcolor
+	set -e FLINT_BCOLOR
 	for seg in $FLINE_PROMPT
 		eval FLSEG_$seg
 	end
-	__close_prev normal normal
-	set -e __bcolor
+	FLINT_CLOSE normal normal
+	set -e FLINT_BCOLOR
 
 end

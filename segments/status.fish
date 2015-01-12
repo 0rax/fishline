@@ -3,9 +3,9 @@
 
 function FLSEG_STATUS
 
-	if test $FLINE_STATUS -gt 0
-		__close_prev $FLCLR_STATUS_BG $FLCLR_STATUS_FG
-		echo -n " $FLINE_STATUS "
+	if test $FLINT_STATUS -gt 0
+		FLINT_CLOSE $FLCLR_STATUS_BG $FLCLR_STATUS_FG
+		echo -n " $FLINT_STATUS "
 	end
 
 end

@@ -3,8 +3,8 @@
 
 function FLSEG_N
 
-	__close_prev normal normal
-	set -e __bcolor
+	FLINT_CLOSE normal normal
+	set -e FLINT_BCOLOR
 	echo
 
 end

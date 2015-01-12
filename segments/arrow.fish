@@ -4,7 +4,7 @@
 
 function FLSEG_ARROW
 
-	__close_prev $FLCLR_ARROW_BG $FLCLR_ARROW_FG
+	FLINT_CLOSE $FLCLR_ARROW_BG $FLCLR_ARROW_FG
 	echo -n "$FLSYM_ARROW"
 
 end

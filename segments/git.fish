@@ -15,9 +15,9 @@ function FLSEG_GIT
 		   set dirty yes
 		end
 		if set -q dirty
-		   __close_prev $FLCLR_GIT_BG_DIRTY $FLCLR_GIT_FG_DIRTY
+		   FLINT_CLOSE $FLCLR_GIT_BG_DIRTY $FLCLR_GIT_FG_DIRTY
 		else
-		   __close_prev $FLCLR_GIT_BG_CLEAN $FLCLR_GIT_FG_CLEAN
+		   FLINT_CLOSE $FLCLR_GIT_BG_CLEAN $FLCLR_GIT_FG_CLEAN
 		end
 		echo -n $FLSYM_GIT_BRANCH
 		echo -n "$branch "

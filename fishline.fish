@@ -20,7 +20,7 @@ end
 
 function FLINT_CLOSE
 
-	if set -q __bcolor
+	if set -q FLINT_BCOLOR
 		set_color -b $argv[1]
 		set_color $FLINT_BCOLOR
 		echo -n "$FLSYM_CLOSE"

@@ -25,4 +25,3 @@ end
 ```
 
 [More informations about installation and configuration availlable in the wiki.](https://github.com/0rax/fishline/wiki "Fishline Wiki")
-lo

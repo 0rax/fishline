@@ -1,5 +1,12 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
+set FLSYM_GIT_BRANCH		""
+set FLSYM_GIT_DETACHED		"➦"
+set FLSYM_GIT_UNTRACKED		"×"
+set FLSYM_GIT_UNSTAGED		"+"
+set FLSYM_GIT_STAGED		"•"
+set FLSYM_GIT_AHEAD			"↑"
+set FLSYM_GIT_BEHIND		"↓"
 
 function FLSEG_GIT
 

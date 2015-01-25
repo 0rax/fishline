@@ -1,14 +1,17 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-# Powerline Glyphs →  ⇡       ⚡ ± ✘ ⚙ ➦
+# Powerline Glyphs ⚡ ± ✘ ➦ ×
 set FLSYM_CLOSE				""
 set FLSYM_SEPARATOR			"  "
 set FLSYM_WRITE_LOCK		"  "
-set FLSYM_GIT_BRANCH		"  "
-set FLSYM_GIT_UNTRACKED		"× "
-set FLSYM_GIT_AHEAD			"⇡ "
-set FLSYM_GIT_BEHIND		"⇡ "
+set FLSYM_GIT_BRANCH		""
+set FLSYM_GIT_DETACHED		"➦"
+set FLSYM_GIT_UNTRACKED		"×"
+set FLSYM_GIT_UNSTAGED		"+"
+set FLSYM_GIT_STAGED		"•"
+set FLSYM_GIT_AHEAD			"↑"
+set FLSYM_GIT_BEHIND		"↓"
 set FLSYM_ARROW				" → "
 
 source $FLINE_PATH/themes/default.fish

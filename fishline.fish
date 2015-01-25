@@ -25,16 +25,16 @@ for ev in (find $FLINE_PATH/events -name '*.fish')
     source $ev
 end
 
-function FLINT_CLOSE
+function FLINT_CLOSE --argument-name BG FG
 
 	if set -q FLINT_BCOLOR
-		set_color -b $argv[1]
+		set_color -b $BG
 		set_color $FLINT_BCOLOR
 		echo -n "$FLSYM_CLOSE"
-	set_color normal
+		set_color normal
 	end
-	set -g FLINT_BCOLOR $argv[1]
-	set_color -b $argv[1] $argv[2]
+	set -g FLINT_BCOLOR $BG
+	set_color -b $BG $FG
  
 end
 

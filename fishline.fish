@@ -18,6 +18,10 @@ for seg in (find $FLINE_PATH/segments -name '*.fish')
     source $seg
 end
 
+for ev in (find $FLINE_PATH/events -name '*.fish')
+    source $ev
+end
+
 function FLINT_CLOSE
 
 	if set -q FLINT_BCOLOR
@@ -31,9 +35,9 @@ function FLINT_CLOSE
  
 end
 
-function fishline
+function fishline --argument-names last_status
 
-	set -g FLINT_STATUS $argv[1]
+	set -g FLINT_STATUS $last_status
 	if not set -q FLINT_STATUS[1]
 		echo "Warning: last status not passed as first argument to fishline,"
 		set FLINT_STATUS 0

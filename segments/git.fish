@@ -1,12 +1,12 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
-set FLSYM_GIT_BRANCH		""
-set FLSYM_GIT_DETACHED		"➦"
-set FLSYM_GIT_UNTRACKED		"×"
-set FLSYM_GIT_UNSTAGED		"+"
-set FLSYM_GIT_STAGED		"•"
-set FLSYM_GIT_AHEAD			"↑"
-set FLSYM_GIT_BEHIND		"↓"
+set FLSYM_GIT_BRANCH		" \uE0A0 "
+set FLSYM_GIT_DETACHED		" \u21CC  "
+set FLSYM_GIT_UNTRACKED		"\u00D7"
+set FLSYM_GIT_UNSTAGED		"\u002B"
+set FLSYM_GIT_STAGED		"\u2219"
+set FLSYM_GIT_AHEAD			"\u21D1" # "\u2191"
+set FLSYM_GIT_BEHIND		"\u21D3" # "\u2193"
 
 function FLSEG_GIT
 
@@ -14,8 +14,8 @@ function FLSEG_GIT
 
 		set -l gitstatus (git status ^ /dev/null | \
 		awk 'BEGIN {d=0; s=0; ns=0; u=0; a=0; b=0};\
-		/On branch \w+/ {m=$3}; \
-		/HEAD detached from \w+/ {m=$4;d=1}; \
+		/On branch .+/ {m=$3}; \
+		/HEAD detached (at|from) .+/ {m=$4;d=1}; \
 		/Changes to be committed:/ {s=1}; \
 		/Changes not staged for commit:/ {ns=1}; \
 		/Untracked files:/ {u=1}; \
@@ -42,29 +42,29 @@ function FLSEG_GIT
 		switch $state
 			case Dirty
 				FLINT_CLOSE $FLCLR_GIT_BG_DIRTY $FLCLR_GIT_FG_DIRTY
-				echo -n " $FLSYM_GIT_BRANCH "
+				printf "$FLSYM_GIT_BRANCH"
 			case Detached
 				FLINT_CLOSE $FLCLR_GIT_BG_DETACHED $FLCLR_GIT_FG_DETACHED
-				echo -n " $FLSYM_GIT_DETACHED "
+				printf "$FLSYM_GIT_DETACHED"
 			case '*'
 				FLINT_CLOSE $FLCLR_GIT_BG_CLEAN $FLCLR_GIT_FG_CLEAN
-				echo -n " $FLSYM_GIT_BRANCH "
+				printf "$FLSYM_GIT_BRANCH"
 		end
 
-		
-		echo -n "$gitstatus[2] "
+
+		printf "$gitstatus[2] "
 		if [ $gitstatus[6] -gt 0 ]
-			echo -n "$gitstatus[6]$FLSYM_GIT_AHEAD "
+			printf "%d$FLSYM_GIT_AHEAD " $gitstatus[6]
 		end
 		if [ $gitstatus[7] -gt 0 ]
-			echo -n "$gitstatus[7]$FLSYM_GIT_AHEAD "
+			printf "%d$FLSYM_GIT_AHEAD " $gitstatus[7]
 		end
 		if [ $gitstatus[5] -eq 1 ]
-			echo -n "$FLSYM_GIT_UNTRACKED "
+			printf "$FLSYM_GIT_UNTRACKED "
 		else if [ $gitstatus[4] -eq 1 ]
-			echo -n "$FLSYM_GIT_UNSTAGED "
+			printf "$FLSYM_GIT_UNSTAGED "
 		else if [ $gitstatus[3] -eq 1 ]
-			echo -n "$FLSYM_GIT_STAGED "
+			printf "$FLSYM_GIT_STAGED "
 		end
 	end
 

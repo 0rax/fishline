@@ -4,6 +4,6 @@
 function FLSEG_USERHOST
 
 	FLINT_CLOSE $FLCLR_USERHOST_BG $FLCLR_USERHOST_FG
-	echo -n " $USER"'@'(hostname)" "
+	printf ' %s@%s' $USER (hostname)
 
 end

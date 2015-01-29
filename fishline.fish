@@ -2,8 +2,8 @@
 # -*-  mode:fish; tab-width:4  -*-
 
 # Powerline Glyphs
-set FLSYM_CLOSE				""
-set FLSYM_SEPARATOR			"  "
+set FLSYM_CLOSE				"\uE0B0"
+set FLSYM_SEPARATOR			"\uE0B1"
 
 source $FLINE_PATH/themes/default.fish
 set FLINE_PROMPT VFISH STATUS PWD GIT WRITE N ARROW
@@ -21,12 +21,12 @@ function FLINT_CLOSE --argument-name BG FG
 	if set -q FLINT_BCOLOR
 		set_color -b $BG
 		set_color $FLINT_BCOLOR
-		echo -n "$FLSYM_CLOSE"
+		printf "$FLSYM_CLOSE"
 		set_color normal
 	end
 	set -g FLINT_BCOLOR $BG
 	set_color -b $BG $FG
- 
+
 end
 
 function FLINT_RELOAD

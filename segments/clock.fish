@@ -4,6 +4,6 @@
 function FLSEG_CLOCK
 
 	FLINT_CLOSE $FLCLR_CLOCK_BG $FLCLR_CLOCK_FG
-	echo -n " "(date "+%H:%M")" "
+	printf " %s " (date "+%H:%M")
 
 end

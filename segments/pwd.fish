@@ -7,7 +7,7 @@ function FLSEG_PWD
 
 	if echo $pwd | grep '^~' >> /dev/null
 		FLINT_CLOSE $FLCLR_PWD_BG_HOME $FLCLR_PWD_FG_HOME
-		echo -n " ~ "
+		printf " ~ "
 	end
 
 	if not echo $pwd | grep '^~$' >> /dev/null
@@ -15,7 +15,7 @@ function FLSEG_PWD
 		if echo $pwd | grep '^/$' >> /dev/null
 			printf " /"
 		else
-			echo -n $pwd | sed "s/~//; s/\// /; s/\//$FLSYM_SEPARATOR/g"
+			printf (echo -n $pwd | sed "s/~//; s/\// /; s/\// \\$FLSYM_SEPARATOR /g")
 		end
 		echo -n " "
 	end

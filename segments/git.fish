@@ -33,7 +33,7 @@ function FLSEG_GIT
 
 		if [ $gitstatus[1] -eq 1 ]
 			set state Detached
-		else if test $gitstatus[3] -eq 1 -o $gitstatus[4] -eq 1 -o $gitstatus[5] -eq 1
+		else if [ (expr $gitstatus[3] + $gitstatus[4] + $gitstatus[5]) -gt 0 ]
 			set state Dirty
 		else
 			set state Clean
@@ -58,6 +58,10 @@ function FLSEG_GIT
 		end
 		if [ $gitstatus[7] -gt 0 ]
 			printf "%d$FLSYM_GIT_AHEAD" $gitstatus[7]
+		end
+		if [ (expr $gitstatus[6] + $gitstatus[7]) -gt 0 \
+			  -a $state = Dirty ]
+			printf " "
 		end
 		if [ $gitstatus[5] -eq 1 ]
 			printf "$FLSYM_GIT_UNTRACKED"

@@ -1,6 +1,8 @@
 fishline
 ========
 
+[![Join the chat at https://gitter.im/0rax/fishline](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/0rax/fishline?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 **Powerline prompt for Fish Shell in Fish Shell.**
 
 ![fishline_preview](https://raw.githubusercontent.com/0rax/fishline/screenshots/prompt.png "Fishline Preview")

@@ -6,7 +6,7 @@ set FLSYM_CLOSE				"\uE0B0"
 set FLSYM_SEPARATOR			"\uE0B1"
 
 source $FLINE_PATH/themes/default.fish
-set FLINE_PROMPT VFISH STATUS PWD GIT WRITE N ARROW
+set FLINE_PROMPT VFISH STATUS PWD GIT WRITE N ROOT
 
 for seg in (find $FLINE_PATH/segments -name '*.fish')
     source $seg

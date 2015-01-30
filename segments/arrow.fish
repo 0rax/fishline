@@ -1,6 +1,5 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
-# Might add color + symbol specific for user/root
 set FLSYM_ARROW			" \u2192 "
 
 function FLSEG_ARROW

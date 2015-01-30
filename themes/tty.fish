@@ -1,6 +1,16 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
+# Symbol for Fishline
+set FLSYM_PRE_CLOSE         "]"
+set FLSYM_CLOSE				""
+set FLSYM_POST_CLOSE        "["
+set FLSYM_SEPARATOR			"/"
+
+# Symbol for ROOT segment
+set FLSYM_ROOT_ROOT         '#'
+set FLSYM_ROOT_USER         '$'
+
 # Color for PWD and FULLPWD segment
 set FLCLR_PWD_BG_HOME       normal
 set FLCLR_PWD_FG_HOME       normal

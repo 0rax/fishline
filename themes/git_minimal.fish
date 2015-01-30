@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
-# Style example for the GIT segment
+# Part theme example for the GIT segment
 
 set FLSYM_GIT_BRANCH		"git:"
 set FLSYM_GIT_DETACHED		"det:"

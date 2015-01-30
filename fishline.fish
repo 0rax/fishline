@@ -27,11 +27,11 @@ function FLINT_CLOSE --argument-name BG FG END
         printf $FLSYM_CLOSE
 		set_color normal
 	end
-	set -g FLINT_BCOLOR $BG
 	set_color -b $BG $FG
-    if not [ "$END" = True ]
+    if [ "$END" != True ]
         printf "$FLSYM_POST_CLOSE"
     end
+    set -g FLINT_BCOLOR $BG
 end
 
 function FLINT_RELOAD

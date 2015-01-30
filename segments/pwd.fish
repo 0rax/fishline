@@ -11,8 +11,9 @@ function FLSEG_PWD
 	end
 
 	if not echo $pwd | grep '^~$' >> /dev/null
+		set -l sep (echo $FLSYM_SEPARATOR | sed 's,\\\\,\\\\\\\\,g')
 		FLINT_CLOSE $FLCLR_PWD_BG $FLCLR_PWD_FG
-		printf (printf $pwd | sed "s/~//; s/\///; s/\//\\$FLSYM_SEPARATOR/g; s/^\$/\//")
+		printf (printf $pwd | sed "s,~,,; s,/,,; s,/,$sep,g; s,^\$,/,")
 	end
 
 end

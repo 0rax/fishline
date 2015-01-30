@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
-set FLSYM_ARROW			" \u2192 "
+set FLSYM_ARROW			"\u2192"
 
 function FLSEG_ARROW
 

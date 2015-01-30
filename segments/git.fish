@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
-set FLSYM_GIT_BRANCH		" \uE0A0 "
-set FLSYM_GIT_DETACHED		" \u21CC  "
+set FLSYM_GIT_BRANCH		"\uE0A0 "
+set FLSYM_GIT_DETACHED		"\u21CC  "
 set FLSYM_GIT_UNTRACKED		"\u00D7"
 set FLSYM_GIT_UNSTAGED		"\u002B"
 set FLSYM_GIT_STAGED		"\u2219"
@@ -54,17 +54,17 @@ function FLSEG_GIT
 
 		printf "$gitstatus[2] "
 		if [ $gitstatus[6] -gt 0 ]
-			printf "%d$FLSYM_GIT_AHEAD " $gitstatus[6]
+			printf "%d$FLSYM_GIT_AHEAD" $gitstatus[6]
 		end
 		if [ $gitstatus[7] -gt 0 ]
-			printf "%d$FLSYM_GIT_AHEAD " $gitstatus[7]
+			printf "%d$FLSYM_GIT_AHEAD" $gitstatus[7]
 		end
 		if [ $gitstatus[5] -eq 1 ]
-			printf "$FLSYM_GIT_UNTRACKED "
+			printf "$FLSYM_GIT_UNTRACKED"
 		else if [ $gitstatus[4] -eq 1 ]
-			printf "$FLSYM_GIT_UNSTAGED "
+			printf "$FLSYM_GIT_UNSTAGED"
 		else if [ $gitstatus[3] -eq 1 ]
-			printf "$FLSYM_GIT_STAGED "
+			printf "$FLSYM_GIT_STAGED"
 		end
 	end
 

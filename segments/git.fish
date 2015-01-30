@@ -52,23 +52,19 @@ function FLSEG_GIT
 		end
 
 
-		printf "$gitstatus[2] "
+		printf "$gitstatus[2]"
 		if [ $gitstatus[6] -gt 0 ]
-			printf "%d$FLSYM_GIT_AHEAD" $gitstatus[6]
+			printf " %d$FLSYM_GIT_AHEAD" $gitstatus[6]
 		end
 		if [ $gitstatus[7] -gt 0 ]
-			printf "%d$FLSYM_GIT_AHEAD" $gitstatus[7]
-		end
-		if [ (expr $gitstatus[6] + $gitstatus[7]) -gt 0 \
-			  -a $state = Dirty ]
-			printf " "
+			printf " %d$FLSYM_GIT_AHEAD" $gitstatus[7]
 		end
 		if [ $gitstatus[5] -eq 1 ]
-			printf "$FLSYM_GIT_UNTRACKED"
+			printf " $FLSYM_GIT_UNTRACKED"
 		else if [ $gitstatus[4] -eq 1 ]
-			printf "$FLSYM_GIT_UNSTAGED"
+			printf " $FLSYM_GIT_UNSTAGED"
 		else if [ $gitstatus[3] -eq 1 ]
-			printf "$FLSYM_GIT_STAGED"
+			printf " $FLSYM_GIT_STAGED"
 		end
 	end
 

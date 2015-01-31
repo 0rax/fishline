@@ -8,7 +8,7 @@ set FLSYM_POST_CLOSE        " "
 set FLSYM_SEPARATOR			" \uE0B1 "
 
 source $FLINE_PATH/themes/default.fish
-set FLINE_PROMPT VFISH STATUS PWD GIT WRITE N ROOT
+set FLINE_PROMPT STATUS JOBS PWD GIT WRITE N ROOT
 
 for seg in (find $FLINE_PATH/segments -name '*.fish')
     source $seg

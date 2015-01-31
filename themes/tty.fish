@@ -11,6 +11,9 @@ set FLSYM_SEPARATOR			"/"
 set FLSYM_ROOT_ROOT         '#'
 set FLSYM_ROOT_USER         '$'
 
+# Symbol for JOBS segment
+set FLSYM_JOBS				"J"
+
 # Color for PWD and FULLPWD segment
 set FLCLR_PWD_BG_HOME       normal
 set FLCLR_PWD_FG_HOME       normal
@@ -57,3 +60,7 @@ set FLCLR_CLOCK_FG          yellow
 # Color for USERHOST segment
 set FLCLR_USERHOST_BG       normal
 set FLCLR_USERHOST_FG       purple
+
+# Color for JOBS segment
+set FLCLR_JOBS_BG         	normal
+set FLCLR_JOBS_FG         	brown

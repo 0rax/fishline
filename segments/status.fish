@@ -3,7 +3,7 @@
 
 function FLSEG_STATUS
 
-	if test $FLINT_STATUS -gt 0
+	if [ $FLINT_STATUS -gt 0 ]
 		FLINT_CLOSE $FLCLR_STATUS_BG $FLCLR_STATUS_FG
 		printf $FLINT_STATUS
 	end

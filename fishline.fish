@@ -37,7 +37,7 @@ end
 
 function FLINT_RELOAD
 	source $FLINE_PATH/fishline.fish
-    source $HOME/.config/config.fish
+	source $HOME/.config/fish/config.fish
 end
 
 function fishline --argument-names last_status

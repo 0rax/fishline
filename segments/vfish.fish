@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
-set FLSYM_VFISH		"\u2302"
+set -g FLSYM_VFISH		"\u2302"
 
 function FLSEG_VFISH
 

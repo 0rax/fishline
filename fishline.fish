@@ -2,13 +2,13 @@
 # -*-  mode:fish; tab-width:4  -*-
 
 # Powerline Glyphs
-set FLSYM_PRE_CLOSE         " "
-set FLSYM_CLOSE				"\uE0B0"
-set FLSYM_POST_CLOSE        " "
-set FLSYM_SEPARATOR			" \uE0B1 "
+set -g FLSYM_PRE_CLOSE         " "
+set -g FLSYM_CLOSE             "\uE0B0"
+set -g FLSYM_POST_CLOSE        " "
+set -g FLSYM_SEPARATOR         " \uE0B1 "
 
-source $FLINE_PATH/themes/default.fish
 set FLINE_PROMPT STATUS JOBS PWD GIT WRITE N ROOT
+source $FLINE_PATH/themes/default.fish
 
 for seg in (find $FLINE_PATH/segments -name '*.fish')
     source $seg
@@ -17,6 +17,7 @@ end
 for ev in (find $FLINE_PATH/events -name '*.fish')
     source $ev
 end
+
 
 function FLINT_CLOSE --argument-name BG FG END
 

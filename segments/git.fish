@@ -1,12 +1,12 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
-set FLSYM_GIT_BRANCH		"\uE0A0 "
-set FLSYM_GIT_DETACHED		"\u21CC  "
-set FLSYM_GIT_UNTRACKED		"\u00D7"
-set FLSYM_GIT_UNSTAGED		"\u002B"
-set FLSYM_GIT_STAGED		"\u2219"
-set FLSYM_GIT_AHEAD			"\u21E1"
-set FLSYM_GIT_BEHIND		"\u21E3"
+set -g FLSYM_GIT_BRANCH		"\uE0A0 "
+set -g FLSYM_GIT_DETACHED		"\u21CC  "
+set -g FLSYM_GIT_UNTRACKED		"\u00D7"
+set -g FLSYM_GIT_UNSTAGED		"\u002B"
+set -g FLSYM_GIT_STAGED		"\u2219"
+set -g FLSYM_GIT_AHEAD			"\u21E1"
+set -g FLSYM_GIT_BEHIND		"\u21E3"
 
 function FLSEG_GIT
 

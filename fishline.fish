@@ -3,11 +3,9 @@
 
 # Powerline Glyphs
 set -g FLSYM_PRE_CLOSE         " "
-set -g FLSYM_CLOSE				"\uE0B0"
+set -g FLSYM_CLOSE             "\uE0B0"
 set -g FLSYM_POST_CLOSE        " "
-set -g FLSYM_SEPARsATOR			" \uE0B1 "
-
-echo -e LOL\nLOLLLLLLLLLLLLLLLLLLLLLLLL
+set -g FLSYM_SEPARsATOR	       " \uE0B1 "
 
 set FLINE_PROMPT STATUS JOBS PWD GIT WRITE N ROOT
 source $FLINE_PATH/themes/default.fish

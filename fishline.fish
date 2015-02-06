@@ -10,15 +10,7 @@ set -g FLSYM_SEPARATOR " \uE0B1 "
 set FLINE_PROMPT STATUS JOBS PWD GIT WRITE N ROOT
 source $FLINE_PATH/themes/default.fish
 
-for seg in (find $FLINE_PATH/segments -name '*.fish')
-	source $seg
-end
-
-for ev in (find $FLINE_PATH/events -name '*.fish')
-	source $ev
-end
-
-function FLINT_CLOSE --argument-name BG FG END
+function FLINT_CLOSE --argument-name BG FG END -d "close the previous fishline segment"
 
 	if set -q FLINT_BCOLOR
 		printf "$FLSYM_PRE_CLOSE"
@@ -34,12 +26,19 @@ function FLINT_CLOSE --argument-name BG FG END
 	set -g FLINT_BCOLOR $BG
 end
 
-function FLINT_RELOAD
-	source $FLINE_PATH/fishline.fish
-	source $HOME/.config/fish/config.fish
+function FLINT_RELOAD -d "reload every fishline segment"
+	for seg in (find $FLINE_PATH/segments -name '*.fish')
+		source $seg
+	end
+
+	for ev in (find $FLINE_PATH/events -name '*.fish')
+		source $ev
+	end
 end
 
-function fishline --argument-names last_status
+FLINT_RELOAD
+
+function fishline --argument-names last_status -d "fishline prompt function"
 
 	set -g FLINT_STATUS $last_status
 	if not set -q FLINT_STATUS[1]

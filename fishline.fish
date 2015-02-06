@@ -2,37 +2,36 @@
 # -*-  mode:fish; tab-width:4  -*-
 
 # Powerline Glyphs
-set -g FLSYM_PRE_CLOSE         " "
-set -g FLSYM_CLOSE             "\uE0B0"
-set -g FLSYM_POST_CLOSE        " "
-set -g FLSYM_SEPARATOR         " \uE0B1 "
+set -g FLSYM_PRE_CLOSE " "
+set -g FLSYM_CLOSE "\uE0B0"
+set -g FLSYM_POST_CLOSE " "
+set -g FLSYM_SEPARATOR " \uE0B1 "
 
 set FLINE_PROMPT STATUS JOBS PWD GIT WRITE N ROOT
 source $FLINE_PATH/themes/default.fish
 
 for seg in (find $FLINE_PATH/segments -name '*.fish')
-    source $seg
+	source $seg
 end
 
 for ev in (find $FLINE_PATH/events -name '*.fish')
-    source $ev
+	source $ev
 end
-
 
 function FLINT_CLOSE --argument-name BG FG END
 
 	if set -q FLINT_BCOLOR
-        printf "$FLSYM_PRE_CLOSE"
+		printf "$FLSYM_PRE_CLOSE"
 		set_color -b $BG
 		set_color "$FLINT_BCOLOR"
-        printf $FLSYM_CLOSE
+		printf $FLSYM_CLOSE
 		set_color normal
 	end
 	set_color -b $BG $FG
-    if [ "$END" != True ]
-        printf "$FLSYM_POST_CLOSE"
-    end
-    set -g FLINT_BCOLOR $BG
+	if [ "$END" != True ]
+		printf "$FLSYM_POST_CLOSE"
+	end
+	set -g FLINT_BCOLOR $BG
 end
 
 function FLINT_RELOAD

@@ -1,12 +1,12 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
-set -g FLSYM_GIT_BRANCH		"\uE0A0 "
-set -g FLSYM_GIT_DETACHED		"\u21CC  "
-set -g FLSYM_GIT_UNTRACKED		"\u00D7"
-set -g FLSYM_GIT_UNSTAGED		"\u002B"
-set -g FLSYM_GIT_STAGED		"\u2219"
-set -g FLSYM_GIT_AHEAD			"\u21E1"
-set -g FLSYM_GIT_BEHIND		"\u21E3"
+set -g FLSYM_GIT_BRANCH "\uE0A0 "
+set -g FLSYM_GIT_DETACHED "\u21CC  "
+set -g FLSYM_GIT_UNTRACKED "\u00D7"
+set -g FLSYM_GIT_UNSTAGED "\u002B"
+set -g FLSYM_GIT_STAGED "\u2219"
+set -g FLSYM_GIT_AHEAD "\u21E1"
+set -g FLSYM_GIT_BEHIND "\u21E3"
 
 function FLSEG_GIT
 
@@ -40,17 +40,16 @@ function FLSEG_GIT
 		end
 
 		switch $state
-			case Dirty
-				FLINT_CLOSE $FLCLR_GIT_BG_DIRTY $FLCLR_GIT_FG_DIRTY
-				printf "$FLSYM_GIT_BRANCH"
-			case Detached
-				FLINT_CLOSE $FLCLR_GIT_BG_DETACHED $FLCLR_GIT_FG_DETACHED
-				printf "$FLSYM_GIT_DETACHED"
-			case '*'
-				FLINT_CLOSE $FLCLR_GIT_BG_CLEAN $FLCLR_GIT_FG_CLEAN
-				printf "$FLSYM_GIT_BRANCH"
+		case Dirty
+			FLINT_CLOSE $FLCLR_GIT_BG_DIRTY $FLCLR_GIT_FG_DIRTY
+			printf "$FLSYM_GIT_BRANCH"
+		case Detached
+			FLINT_CLOSE $FLCLR_GIT_BG_DETACHED $FLCLR_GIT_FG_DETACHED
+			printf "$FLSYM_GIT_DETACHED"
+		case '*'
+			FLINT_CLOSE $FLCLR_GIT_BG_CLEAN $FLCLR_GIT_FG_CLEAN
+			printf "$FLSYM_GIT_BRANCH"
 		end
-
 
 		printf "$gitstatus[2]"
 		if [ $gitstatus[6] -gt 0 ]

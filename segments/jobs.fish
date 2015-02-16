@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
-sed FLSYM_JOBS "\u2699"
+set FLSYM_JOBS "\u2699"
 
 function FLSEG_JOBS
 

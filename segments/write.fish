@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
-sed FLSYM_WRITE_LOCK "\uE0A2"
+set FLSYM_WRITE_LOCK "\uE0A2"
 
 function FLSEG_WRITE
 

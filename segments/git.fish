@@ -1,12 +1,12 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
-sed FLSYM_GIT_BRANCH "\uE0A0 "
-sed FLSYM_GIT_DETACHED "\u21CC  "
-sed FLSYM_GIT_UNTRACKED "\u00D7"
-sed FLSYM_GIT_UNSTAGED "\u002B"
-sed FLSYM_GIT_STAGED "\u2219"
-sed FLSYM_GIT_AHEAD "\u21E1"
-sed FLSYM_GIT_BEHIND "\u21E3"
+set FLSYM_GIT_BRANCH "\uE0A0 "
+set FLSYM_GIT_DETACHED "\u21CC  "
+set FLSYM_GIT_UNTRACKED "\u00D7"
+set FLSYM_GIT_UNSTAGED "\u002B"
+set FLSYM_GIT_STAGED "\u2219"
+set FLSYM_GIT_AHEAD "\u21E1"
+set FLSYM_GIT_BEHIND "\u21E3"
 
 function FLSEG_GIT
 
@@ -20,8 +20,8 @@ function FLSEG_GIT
 		/Changes not staged for commit:/ {ns=1}; \
 		/Untracked files:/ {u=1}; \
 		/Your branch is ahead/ {a=$8}; \
-		/Your branch is behind/ {b=$8}; END {print d, m, s, ns, u, a, b}' \
-		| sed 's/ /\n/g' )
+		/Your branch is behind/ {b=$8}; \
+		END {print d, m, s, ns, u, a, b}' | tr ' ' '\n' )
 
 		# bool gitstatus[1] detached
 		# str  gitstatus[2] branch name

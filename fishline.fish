@@ -26,7 +26,7 @@ function FLINT_CLOSE --argument-name BG FG END -d "close the previous fishline s
 	set -g FLINT_BCOLOR $BG
 end
 
-function FLINT_RELOAD -d "reload every fishline segment"
+function FLINT_RELOAD -S -d "reload every fishline segment"
 	for seg in (find $FLINE_PATH/segments -name '*.fish')
 		source $seg
 	end

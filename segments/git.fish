@@ -20,8 +20,8 @@ function FLSEG_GIT
 		/Changes not staged for commit:/ {ns=1}; \
 		/Untracked files:/ {u=1}; \
 		/Your branch is ahead/ {a=$8}; \
-		/Your branch is behind/ {b=$8}; END {print d, m, s, ns, u, a, b}' \
-		| sed 's/ /\n/g' )
+		/Your branch is behind/ {b=$8}; \
+		END {print d, m, s, ns, u, a, b}' | tr ' ' '\n' )
 
 		# bool gitstatus[1] detached
 		# str  gitstatus[2] branch name

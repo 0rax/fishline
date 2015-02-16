@@ -7,7 +7,9 @@ set FLSYM_CLOSE "\uE0B0"
 set FLSYM_POST_CLOSE " "
 set FLSYM_SEPARATOR " \uE0B1 "
 
-set FLINE_PROMPT STATUS JOBS PWD GIT WRITE N ROOT
+if not set -q FLINE_PROMPT
+	set FLINE_PROMPT STATUS JOBS PWD GIT WRITE N ROOT
+end
 source $FLINE_PATH/themes/default.fish
 
 function FLINT_CLOSE --argument-name BG FG END -d "close the previous fishline segment"

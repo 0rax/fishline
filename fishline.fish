@@ -2,10 +2,10 @@
 # -*-  mode:fish; tab-width:4  -*-
 
 # Powerline Glyphs
-sed FLSYM_PRE_CLOSE " "
-sed FLSYM_CLOSE "\uE0B0"
-sed FLSYM_POST_CLOSE " "
-sed FLSYM_SEPARATOR " \uE0B1 "
+set FLSYM_PRE_CLOSE " "
+set FLSYM_CLOSE "\uE0B0"
+set FLSYM_POST_CLOSE " "
+set FLSYM_SEPARATOR " \uE0B1 "
 
 set FLINE_PROMPT STATUS JOBS PWD GIT WRITE N ROOT
 source $FLINE_PATH/themes/default.fish

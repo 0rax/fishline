@@ -5,7 +5,7 @@ set FLSYM_ROOT_USER "\u2192"
 
 function FLSEG_ROOT
 
-	if echo $USER  | grep '^root$' >>  /dev/null
+	if [ "$USER" = "root" ]
 		FLINT_CLOSE $FLCLR_ROOT_BG_ROOT $FLCLR_ROOT_FG_ROOT
 		printf $FLSYM_ROOT_ROOT
 	else

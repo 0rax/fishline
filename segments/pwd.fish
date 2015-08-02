@@ -3,17 +3,26 @@
 
 function FLSEG_PWD
 
-	set -l pwd (prompt_pwd)
+	set -l pwd (echo $PWD | sed -re "s|^$HOME|~|;s|/?(\.?[^/])[^/]*/|\1\n|g")
+	set -l it 1
+	set -l len (count $pwd)
 
-	if echo $pwd  | grep '^~' >>  /dev/null
+	if [ "$pwd[1]" = "~" ]
 		FLINT_CLOSE $FLCLR_PWD_BG_HOME $FLCLR_PWD_FG_HOME
 		printf "~"
+		set it 2
 	end
 
-	if not echo $pwd  | grep '^~$' >>  /dev/null
-		set -l sep (echo $FLSYM_SEPARATOR | sed 's,\\\\,\\\\\\\\,g')
+	if [ $it -le $len ]
 		FLINT_CLOSE $FLCLR_PWD_BG $FLCLR_PWD_FG
-		printf (printf $pwd | sed "s,~,,; s,/,,; s,/,$sep,g; s,^\$,/,")
+		for f in $pwd[$it..$len]
+			set it (expr $it + 1)
+			if test $it -le $len
+				printf $f$FLSYM_SEPARATOR
+			else
+				printf $f
+			end
+		end
 	end
 
 end

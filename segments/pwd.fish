@@ -14,7 +14,9 @@ function FLSEG_PWD
 	end
 
 	if [ $it -le $len ]
+
 		FLINT_CLOSE $FLCLR_PWD_BG $FLCLR_PWD_FG
+
 		for f in $pwd[$it..$len]
 			set it (expr $it + 1)
 			if test $it -le $len
@@ -23,6 +25,7 @@ function FLSEG_PWD
 				printf $f
 			end
 		end
+
 	end
 
 end

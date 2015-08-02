@@ -12,28 +12,30 @@ function FLSEG_GIT
 
 	if [ $FLINT_GIT -eq 0 ]
 
-		set -l gitstatus (git status ^ /dev/null | \
-		awk 'BEGIN {d=0; s=0; ns=0; u=0; a=0; b=0};\
-		/On branch .+/ {m=$3}; \
-		/HEAD detached (at|from) .+/ {m=$4;d=1}; \
-		/Changes to be committed:/ {s=1}; \
-		/Changes not staged for commit:/ {ns=1}; \
-		/Untracked files:/ {u=1}; \
-		/Your branch is ahead/ {a=$8}; \
-		/Your branch is behind/ {b=$8}; \
-		END {print d, m, s, ns, u, a, b}' | tr ' ' '\n' )
+		set -l detached 0
+		set -l ahead 0
+		set -l behind 0
+		set -l branch (git rev-parse --abbrev-ref HEAD)
 
-		# bool gitstatus[1] detached
-		# str  gitstatus[2] branch name
-		# bool gitstatus[3] staged changes
-		# bool gitstatus[4] unstaged changes
-		# bool gitstatus[5] untracked files
-		# int  gitstatus[6] numbers of commit ahead from head
-		# int  gitstatus[7] numbers of commit behind from head
+		if [ "$branch" = "HEAD" ]
+			set branch (git describe --tags --exact-match; or git log --pretty=oneline --abbrev-commit -1 | cut -d' ' -f1)
+			set detached 1
+		else if git rev-parse --verify --quiet origin/$branch ^^ /dev/null >> /dev/null
+			set ahead (git rev-list origin/$branch..$branch | wc -l)
+			set behind (git rev-list $branch..origin/$branch | wc -l)
+		end
 
-		if [ $gitstatus[1] -eq 1 ]
+		set -l gitstatus (git status --porcelain ^^ /dev/null | cut -c 1-2 |\
+						  awk 'BEGIN {s=0; n=0; u=0};\
+						       /^[AM].$/ {s=1}; /^.M$/ {n=1}; /^\?\?$/ {u=1};\
+						       END {printf("%d\n%d\n%d", s, n, u)}')
+		# bool gitstatus[1] staged changes
+		# bool gitstatus[2] unstaged changes
+		# bool gitstatus[3] untracked files
+
+		if [ $detached -eq 1 ]
 			set state Detached
-		else if [ (expr $gitstatus[3] + $gitstatus[4] + $gitstatus[5]) -gt 0 ]
+		else if [ (math $gitstatus[1] + $gitstatus[2] + $gitstatus[3]) -gt 0 ]
 			set state Dirty
 		else
 			set state Clean
@@ -51,20 +53,22 @@ function FLSEG_GIT
 			printf "$FLSYM_GIT_BRANCH"
 		end
 
-		printf "$gitstatus[2]"
-		if [ $gitstatus[6] -gt 0 ]
-			printf " %d$FLSYM_GIT_AHEAD" $gitstatus[6]
+		printf "$branch"
+		if [ $ahead -gt 0 ]
+			printf " %d$FLSYM_GIT_AHEAD" $ahead
 		end
-		if [ $gitstatus[7] -gt 0 ]
-			printf " %d$FLSYM_GIT_AHEAD" $gitstatus[7]
+		if [ $behind -gt 0 ]
+			printf " %d$FLSYM_GIT_BEHIND" $behind
 		end
-		if [ $gitstatus[5] -eq 1 ]
+
+		if [ $gitstatus[3] -eq 1 ]
 			printf " $FLSYM_GIT_UNTRACKED"
-		else if [ $gitstatus[4] -eq 1 ]
+		else if [ $gitstatus[2] -eq 1 ]
 			printf " $FLSYM_GIT_UNSTAGED"
-		else if [ $gitstatus[3] -eq 1 ]
+		else if [ $gitstatus[1] -eq 1 ]
 			printf " $FLSYM_GIT_STAGED"
 		end
+
 	end
 
 end

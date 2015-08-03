@@ -18,7 +18,7 @@ function FLSEG_GIT
 		set -l branch (git rev-parse --abbrev-ref HEAD)
 
 		if [ "$branch" = "HEAD" ]
-			set branch (git describe --tags --exact-match; or git log --pretty=oneline --abbrev-commit -1 | cut -d' ' -f1)
+			set branch (git describe --tags --exact-match ^^ /dev/null; or git log --pretty=oneline --abbrev-commit -1 | cut -d' ' -f1)
 			set detached 1
 		else if git rev-parse --verify --quiet origin/$branch ^^ /dev/null >> /dev/null
 			set ahead (git rev-list origin/$branch..$branch | wc -l)

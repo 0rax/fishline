@@ -2,25 +2,29 @@
 # -*-  mode:fish; tab-width:4  -*-
 
 # Symbol for Fishline
-set FLSYM_PRE_CLOSE         "]"
-set FLSYM_CLOSE				""
-set FLSYM_POST_CLOSE        "["
-set FLSYM_SEPARATOR			"/"
+set FLSYM_LEFT_PRE          "]"
+set FLSYM_LEFT_CLOSE        ""
+set FLSYM_LEFT_POST         "["
+set FLSYM_LEFT_SEPARATOR    "/"
+set FLSYM_RIGHT_PRE         "]"
+set FLSYM_RIGHT_OPEN        ""
+set FLSYM_RIGHT_POST        "["
+set FLSYM_RIGHT_SEPARATOR   "/"
 
 # Symbol for ROOT segment
-set FLSYM_ROOT_ROOT         '#'
-set FLSYM_ROOT_USER         '$'
+set FLSYM_ROOT_ROOT         "#"
+set FLSYM_ROOT_USER         "$"
 
 # Symbol for JOBS segment
-set FLSYM_JOBS				"J"
+set FLSYM_JOBS              "J"
 
 # Color for PWD and FULLPWD segment
 set FLCLR_PWD_BG_HOME       normal
 set FLCLR_PWD_FG_HOME       normal
 set FLCLR_PWD_BG            normal
 set FLCLR_PWD_FG            normal
-set FLCLR_FULLPWD_BG		$FLCLR_PWD_BG
-set FLCLR_FULLPWD_FG		$FLCLR_PWD_FG
+set FLCLR_FULLPWD_BG        $FLCLR_PWD_BG
+set FLCLR_FULLPWD_FG        $FLCLR_PWD_FG
 
 
 # Color for STATUS segment
@@ -62,5 +66,5 @@ set FLCLR_USERHOST_BG       normal
 set FLCLR_USERHOST_FG       purple
 
 # Color for JOBS segment
-set FLCLR_JOBS_BG         	normal
-set FLCLR_JOBS_FG         	brown
+set FLCLR_JOBS_BG           normal
+set FLCLR_JOBS_FG           brown

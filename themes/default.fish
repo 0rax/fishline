@@ -6,8 +6,8 @@ set FLCLR_PWD_BG_HOME       26A
 set FLCLR_PWD_FG_HOME       normal
 set FLCLR_PWD_BG            444
 set FLCLR_PWD_FG            normal
-set FLCLR_FULLPWD_BG		$FLCLR_PWD_BG
-set FLCLR_FULLPWD_FG		$FLCLR_PWD_FG
+set FLCLR_FULLPWD_BG        $FLCLR_PWD_BG
+set FLCLR_FULLPWD_FG        $FLCLR_PWD_FG
 
 # Color for STATUS segment
 set FLCLR_STATUS_BG         A22
@@ -48,5 +48,5 @@ set FLCLR_USERHOST_BG       1F1209
 set FLCLR_USERHOST_FG       white
 
 # Color for JOBS segment
-set FLCLR_JOBS_BG         	C50
-set FLCLR_JOBS_FG         	normal
+set FLCLR_JOBS_BG           C50
+set FLCLR_JOBS_FG           normal

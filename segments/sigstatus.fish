@@ -5,7 +5,7 @@ function FLSEG_SIGSTATUS
 
 	if [ $FLINT_STATUS -gt 128 ]; and [ $FLINT_STATUS -lt 160 ]
 		FLINT_CLOSE $FLCLR_STATUS_BG $FLCLR_STATUS_FG
-		printf SIG(kill -l $FLINT_STATUS)
+		printf SIG(kill -l $FLINT_STATUS | tr '[a-z]' '[A-Z]')
 	else if [ $FLINT_STATUS -eq 126 ]
 		FLINT_CLOSE $FLCLR_STATUS_BG $FLCLR_STATUS_FG
 		printf "NOEXEC"

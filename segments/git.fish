@@ -18,9 +18,13 @@ function FLTEST_GIT
 	set _OLDPWD $PWD
 
 	git clone --depth 1 https://github.com/0rax/fishline.git /tmp/fishline_test ^ /dev/null > /dev/null
-	cd /tmp/fishline_test
+
+	echo "Context: Not in a git repository"
+	cd /tmp
+	FLINT_TEST GIT
 
 	echo "Context: Newly checkedout repository / clean repository"
+	cd /tmp/fishline_test
 	FLINT_TEST GIT
 
 	echo "Context: Untracked file in git repository"

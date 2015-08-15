@@ -8,6 +8,55 @@ set FLSYM_GIT_STAGED "\u2219"
 set FLSYM_GIT_AHEAD "\u21E1"
 set FLSYM_GIT_BEHIND "\u21E3"
 
+function FLTEST_GIT
+
+	if not command -s git > /dev/null
+		echo "Could not test GIT segment as git is not installed"
+		return
+	end
+
+	set _OLDPWD $PWD
+
+	git clone --depth 1 https://github.com/0rax/fishline.git ^ /dev/null /tmp/fishline_test
+	cd /tmp/fishline_test
+	echo
+
+	echo "Context: Newly checkedout repository / clean repository"
+	FLINT_TEST GIT
+
+	echo "Context: Untracked file in git repository"
+	touch test_fishline
+	FLINT_TEST GIT
+	rm test_fishline
+
+	echo "Context: Changes not staged for commit"
+	echo test_fishline >> LICENSE
+	FLINT_TEST GIT
+	git checkout LICENSE
+
+	echo "Context: Changes to be commited"
+	touch test_fishline
+	git add test_fishline
+	FLINT_TEST GIT
+	git rm -rf test_fishline > /dev/null ^ /dev/null
+
+	echo "Context: 1 commit ahead and 1 behind in branch dev"
+	git checkout -b dev > /dev/null ^ /dev/null
+	FLINT_TEST GIT
+
+	echo "Context: EVERYTHING"
+	touch test_fishline_untracked
+	echo test_fishline >> LICENSE
+	touch test_fishline
+	git add test_fishline
+	git commit --allow-empty -m "Empty commit" > /dev/null ^ /dev/null
+	FLINT_TEST GIT
+
+	rm -rf /tmp/fishline_test
+	cd $_OLDPWD
+
+end
+
 function FLSEG_GIT
 
 	if [ $FLINT_GIT -eq 0 ]

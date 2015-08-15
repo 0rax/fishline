@@ -1,6 +1,28 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
+function FLTEST_PWD
+
+	set _OLDPWD $PWD
+	echo "Context: Current Working Directory is '/'"
+	cd /
+	FLINT_TEST PWD
+	echo "Context: Current Working Directory is '/tmp'"
+	cd /tmp
+	FLINT_TEST PWD
+	echo "Context: Current Working Directory is '/var/log'"
+	cd /var/log
+	FLINT_TEST PWD
+	echo "Context: Current Working Directory is '$HOME'"
+	cd $HOME
+	FLINT_TEST PWD
+	echo "Context: Current Working Directory is '$HOME/.config/fish'"
+	cd $HOME/.config/fish/
+	FLINT_TEST PWD
+	cd $_OLDPWD
+
+end
+
 function FLSEG_PWD
 
 	set -l pwd (echo $PWD | sed -re "s|^$HOME|~|;s|/?(\.?[^/])[^/]*/|\1\n|g")

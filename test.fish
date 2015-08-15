@@ -1,15 +1,13 @@
 #!/usr/bin/env fish
 
-if not set -q FLINE_PATH
-    set -g FLINE_PATH (pwd)
-end
+set -g FLINE_PATH (pwd)
 
 source $FLINE_PATH/fishline.fish
 
 set -l SEGMENTS
 
 if [ (count $argv) -eq 0 ]
-    set SEGMENTS (functions | sed -nr 's/FLSEG_(\S+)/\1/p')
+    set SEGMENTS (functions | sed -nE 's/FLSEG_([a-zA-Z_]+)/\1/p')
 else
     set SEGMENTS $argv
 end

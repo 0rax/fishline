@@ -26,6 +26,6 @@ end
 function FLSEG_FULLPWD
 
 	FLINT_CLOSE $FLCLR_FULLPWD_BG $FLCLR_FULLPWD_FG
-	printf $PWD | sed "s|^$HOME|~|"
+	printf $PWD | sed "s|^$HOME|~|" | tr -d '\n'
 
 end

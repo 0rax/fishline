@@ -17,9 +17,8 @@ function FLTEST_GIT
 
 	set _OLDPWD $PWD
 
-	git clone --depth 1 https://github.com/0rax/fishline.git ^ /dev/null /tmp/fishline_test
+	git clone --depth 1 https://github.com/0rax/fishline.git /tmp/fishline_test ^ /dev/null > /dev/null
 	cd /tmp/fishline_test
-	echo
 
 	echo "Context: Newly checkedout repository / clean repository"
 	FLINT_TEST GIT

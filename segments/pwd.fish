@@ -25,7 +25,7 @@ end
 
 function FLSEG_PWD
 
-	set -l pwd (echo $PWD | sed -re "s|^$HOME|~|;s|/?(\.?[^/])[^/]*/|\1\n|g")
+	set -l pwd (echo $PWD | sed -E "s|^$HOME|~|;s|/?(\.?[^/])[^/]*/|\1"\u1F"|g" | tr \u1F '\n')
 	set -l it 1
 	set -l len (count $pwd)
 

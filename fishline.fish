@@ -100,7 +100,7 @@ function fishline -d "fishline prompt function"
 	set -g FLINT_FIRST True
 	set FLSYM_SEPARATOR $FLSYM_LEFT_SEPARATOR
 
-	set -l args (getopt "lrs:" $argv | sed -re 's/^\s//;s/\ +/\n/g')
+	set -l args (getopt "lrs:" $argv | sed -E 's/^\s//;s/\ +/ /g' | tr ' ' '\n')
 	while [ (count $args) -ge 0 ]
 		switch $args[1]
 		case "-s"

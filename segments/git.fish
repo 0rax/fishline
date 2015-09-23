@@ -14,8 +14,8 @@ function FLSEG_GIT
 
 		set -l gitstatus (git status ^ /dev/null | \
 		awk 'BEGIN {d=0; s=0; ns=0; u=0; a=0; b=0};\
-		/On branch .+/ {m=$3}; \
-		/HEAD detached (at|from) .+/ {m=$4;d=1}; \
+		/On branch .+/ {m=$4}; \
+		/HEAD detached (at|from) .+/ {m=$5;d=1}; \
 		/Changes to be committed:/ {s=1}; \
 		/Changes not staged for commit:/ {ns=1}; \
 		/Untracked files:/ {u=1}; \

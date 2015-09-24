@@ -77,7 +77,8 @@ function FLSEG_GIT
 			set behind (git rev-list $branch..origin/$branch | wc -l)
 		end
 
-		set -l gitstatus (git status --porcelain ^^ /dev/null | cut -c 1-2 | awk 'BEGIN {s=0; n=0; u=0}; /^[AM].$/ {s=1}; /^.M$/ {n=1}; /^\?\?$/ {u=1}; END {printf("%d\n%d\n%d", s, n, u)}')
+		# http://git-scm.com/docs/git-status
+		set -l gitstatus (git status --porcelain ^^ /dev/null | cut -c 1-2 | awk 'BEGIN {s=0; n=0; u=0}; /^[MARCDU].$/ {s=1}; /^.[MDAU]$/ {n=1}; /^\?\?$/ {u=1}; END {printf("%d\n%d\n%d", s, n, u)}')
 		# bool gitstatus[1] staged changes
 		# bool gitstatus[2] unstaged changes
 		# bool gitstatus[3] untracked files

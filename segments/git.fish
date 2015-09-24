@@ -17,7 +17,7 @@ function FLTEST_GIT
 
 	set _OLDPWD $PWD
 
-	git clone --depth 1 https://github.com/0rax/fishline.git /tmp/fishline_test ^ /dev/null > /dev/null
+	git clone https://github.com/0rax/fishline.git /tmp/fishline_test ^ /dev/null > /dev/null
 
 	echo "Context: Not in a git repository"
 	cd /tmp
@@ -43,7 +43,9 @@ function FLTEST_GIT
 	FLINT_TEST GIT
 	git rm -rf test_fishline > /dev/null ^ /dev/null
 
-	echo "Context: 1 commit ahead and 1 behind in branch dev"
+	git commit -am "Testing GIT Segment" --allow-empty > /dev/null ^ /dev/null
+	git commit -am "Testing GIT Segment" --allow-empty > /dev/null ^ /dev/null
+	echo "Context: with commits ahead and behind in branch dev"
 	git checkout -b dev > /dev/null ^ /dev/null
 	FLINT_TEST GIT
 

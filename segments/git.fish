@@ -64,14 +64,22 @@ end
 
 function FLSEG_GIT
 
+    if test -d .git; and [ $FLINT_GIT -eq 0 ]
+        # manually trigger FLEVENT_GIT when a new git repository is initialized
+        FLEVENT_GIT
+    end
+
 	if [ $FLINT_GIT -eq 0 ]
 
 		set -l detached 0
 		set -l ahead 0
 		set -l behind 0
-		set -l branch (git rev-parse --abbrev-ref HEAD)
+		set -l branch (git rev-parse --abbrev-ref HEAD ^^ /dev/null)
 
-		if [ "$branch" = "HEAD" ]
+        if [ "$status" -ne 0 ]
+            set branch master
+            set detached 1
+		else if [ "$branch" = "HEAD" ]
 			set branch (git describe --tags --exact-match ^^ /dev/null; or git log --pretty=oneline --abbrev-commit -1 | cut -d' ' -f1)
 			set detached 1
 		else if git rev-parse --verify --quiet origin/$branch ^^ /dev/null >> /dev/null

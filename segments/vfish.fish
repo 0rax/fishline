@@ -1,6 +1,14 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
-set FLSYM_VFISH "\u2302"
+set FLSYM_VFISH "\u2635"
+
+function FLTEST_VFISH
+
+	echo "Context: VIRTUAL_ENV var is set to 'fishline_test'"
+	set -gx VIRTUAL_ENV fishline_test
+	FLINT_TEST VFISH
+
+end
 
 function FLSEG_VFISH
 

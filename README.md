@@ -22,7 +22,7 @@ source $FLINE_PATH/fishline.fish
 Now call the fishline function with your last status in your `fish_prompt` function
 ```sh
 function fish_prompt
-    fishline $status
+    fishline -s $status
 end
 ```
 

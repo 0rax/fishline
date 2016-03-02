@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
-set FLSYM_JOBS "\u2699"
+set FLSYM_JOBS "\u2668 "
 
 function FLTEST_JOBS
 

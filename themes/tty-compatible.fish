@@ -13,7 +13,7 @@ set FLSYM_RIGHT_SEPARATOR   "/"
 
 # Symbol for ROOT segment
 set FLSYM_ROOT_ROOT         "#"
-set FLSYM_ROOT_USER         "$"
+set FLSYM_ROOT_USER         "\$"
 
 # Symbol for JOBS segment
 set FLSYM_JOBS              "J"

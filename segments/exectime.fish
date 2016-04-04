@@ -1,6 +1,5 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
-set FLSYM_EXECTIME "\u2635"
 set FLCLR_EXECTIME_BG red
 set FLCLR_EXECTIME_FG black
 

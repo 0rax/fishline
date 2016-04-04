@@ -85,10 +85,6 @@ function FLINT_RELOAD -S -d "reload every fishline segment"
 		source $seg
 	end
 
-	for ev in (find $FLINE_PATH/events -name '*.fish')
-		source $ev
-	end
-
 end
 
 FLINT_RELOAD

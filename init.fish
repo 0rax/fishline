@@ -14,9 +14,20 @@ else
     set -gx fish_function_path $fish_function_path $FLINE_PATH/functions $FLINE_PATH/internals $FLINE_PATH/segments
 end
 
-# Default theme
-source $FLINE_PATH/themes/default_colors.fish
-source $FLINE_PATH/themes/default_glyphs.fish
+# Load default color theme based on tput output
+if begin; not command -s tput > /dev/null; or [ (tput colors) -lt 256 ]; end
+    # Assume ANSI 8 Colors when tput is not availlable & tput colors < 256
+    source $FLINE_PATH/themes/default_ansi_colors.fish
+else
+    source $FLINE_PATH/themes/default_256_colors.fish
+end
+
+# Load default symbol & themes based if on a tty or not
+if begin; [ (uname) != "Darwin" ]; and tty | grep tty > /dev/null; end
+    source $FLINE_PATH/themes/tty_compatible.fish
+else
+    source $FLINE_PATH/themes/default_symbols.fish
+end
 
 # Default Fishline Prompt
 set FLINT_DEFAULT_PROMPT VIMODE SIGSTATUS JOBS PWD GIT WRITE N ROOT

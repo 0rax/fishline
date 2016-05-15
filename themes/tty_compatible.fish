@@ -17,10 +17,14 @@ set FLSYM_RIGHT_SEPARATOR   "/"
 # Symbol for ARROW segment
 set FLSYM_ARROW             "\$"
 
-# Incldue git-minimal glyph if availlable
-if test -f $FLINE_PATH/themes/git-minimal.fish
-    source $FLINE_PATH/themes/git-minimal.fish
-end
+# Symbol for GIT segment
+set FLSYM_GIT_BRANCH        "git:"
+set FLSYM_GIT_DETACHED      "det:"
+set FLSYM_GIT_UNTRACKED     "u"
+set FLSYM_GIT_UNSTAGED      "s"
+set FLSYM_GIT_STAGED        "c"
+set FLSYM_GIT_AHEAD         "A"
+set FLSYM_GIT_BEHIND        "B"
 
 # Symbol for JOBS segment
 set FLSYM_JOBS              "J"

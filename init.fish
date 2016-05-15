@@ -19,4 +19,4 @@ source $FLINE_PATH/themes/default_colors.fish
 source $FLINE_PATH/themes/default_glyphs.fish
 
 # Default Fishline Prompt
-set FLINE_DEFAULT VIMODE SIGSTATUS JOBS PWD GIT WRITE N ROOT
+set FLINT_DEFAULT_PROMPT VIMODE SIGSTATUS JOBS PWD GIT WRITE N ROOT

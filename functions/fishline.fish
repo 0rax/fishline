@@ -7,8 +7,13 @@ function fishline -d "fishline prompt function"
     set -g FLINT_POSITION Left
     set -g FLINT_FIRST True
     set -g FLSYM_SEPARATOR $FLSYM_LEFT_SEPARATOR
+    set -l args (getopt "lrxhvs:" $argv)
 
-    set -l args (getopt "lrvs:" $argv | sed -E 's/^\s//;s/\ +/ /g' | tr ' ' '\n')
+    if [ $status -gt 0 ]
+        return 1
+    end
+    set args (echo $args | sed -E 's/^\s//;s/\ +/ /g' | tr ' ' '\n')
+
     while [ (count $args) -ge 0 ]
         switch $args[1]
         case "-s"
@@ -20,9 +25,15 @@ function fishline -d "fishline prompt function"
         case "-l"
             set FLINT_POSITION Left
             set FLSYM_SEPARATOR $FLSYM_LEFT_SEPARATOR
+        case "-x"
+            functions | sed -nE 's/FLSEG_([a-zA-Z_]+)/\1/p'
+            return 0
+        case "-h"
+            FLINT_USAGE
+            return 0
         case "-v"
             FLINT_VERSION
-            return
+            return 0
         case "--"
             break
         end
@@ -53,7 +64,7 @@ function fishline -d "fishline prompt function"
             eval FLSEG_$seg
         end
     else
-        for seg in $FLINE_DEFAULT
+        for seg in $FLINT_DEFAULT_PROMPT
             eval FLSEG_$seg
         end
     end

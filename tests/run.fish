@@ -8,7 +8,7 @@ set -l fish_function_path $fish_function_path $FLINE_PATH/tests
 set -l SEGMENTS
 
 if [ (count $argv) -eq 0 ]
-    set SEGMENTS (functions | sed -nE 's/FLSEG_([a-zA-Z_]+)/\1/p')
+    set SEGMENTS (fishline -x)
 else
     set SEGMENTS $argv
 end

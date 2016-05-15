@@ -3,7 +3,8 @@
 
 function FLSEG_PWD
 
-    set -l pwd (echo $PWD | sed -E "s|^$HOME|~|;s|/?(\.?[^/])[^/]*/|\1"\u1F"|g" | tr \u1F '\n')
+    set -l pwd (prompt_pwd | sed -E 's;/?([^/]+)/;\1'\u1F';g' | tr \u1F '\n')
+
     set -l it 1
     set -l len (count $pwd)
 

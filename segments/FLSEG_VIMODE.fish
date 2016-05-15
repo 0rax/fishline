@@ -5,11 +5,6 @@ function FLSEG_VIMODE
 
     if set -q __fish_vi_mode
 
-        # Make sure the default fish_mode_prompt is removed
-        if functions -q fish_mode_prompt
-            functions -e fish_mode_prompt
-        end
-
         switch $fish_bind_mode
           case default
             FLINT_CLOSE $FLCLR_VIMODE_DEFAULT_BG $FLCLR_VIMODE_DEFAULT_FG

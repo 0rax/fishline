@@ -16,7 +16,7 @@ Clone fishline where you want, here in the fish's config folder:
 Set in your `config.fish` this fishline path and source it.
 ```sh
 set FLINE_PATH $HOME/.config/fish/fishline
-source $FLINE_PATH/fishline.fish
+source $FLINE_PATH/init.fish
 ```
 
 Now call the fishline function with your last status in your `fish_prompt` function
@@ -26,4 +26,4 @@ function fish_prompt
 end
 ```
 
-[More informations about installation and configuration availlable in the wiki.](https://github.com/0rax/fishline/wiki "Fishline Wiki")
+[More informations about installation and configuration available in the wiki.](https://github.com/0rax/fishline/wiki "Fishline Wiki")

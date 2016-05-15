@@ -1,7 +1,6 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-
 function fishline -d "fishline prompt function"
 
     set -g FLINT_STATUS False

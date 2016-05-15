@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
-set -l FLINE_PATH (dirname (status -f))
-source $FLINE_PATH/conf.d/init.fish
+set -l FLINE_PATH (dirname (status -f))/..
+source $FLINE_PATH/init.fish
 
 set -l fish_function_path $fish_function_path $FLINE_PATH/tests
 

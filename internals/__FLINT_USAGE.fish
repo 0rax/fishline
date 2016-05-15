@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function FLINT_USAGE
+function __FLINT_USAGE
 
     printf "# %s\n" (FLINT_VERSION)
     printf "

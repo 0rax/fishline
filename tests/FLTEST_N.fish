@@ -4,6 +4,6 @@
 function FLTEST_N
 
     echo "Context: N segment between CLOCK and ARROW segments"
-    FLINT_TEST CLOCK N ARROW
+    __FLINT_TEST CLOCK N ARROW
 
 end

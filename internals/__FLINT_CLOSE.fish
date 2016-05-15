@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function FLINT_CLOSE --argument-name BG FG END -d "close the previous fishline segment"
+function __FLINT_CLOSE --argument-name BG FG END -d "close the previous fishline segment"
 
     if [ "$FLINT_POSITION" = "Right" ]
 

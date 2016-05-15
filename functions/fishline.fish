@@ -29,10 +29,10 @@ function fishline -d "fishline prompt function"
             functions | sed -nE 's/FLSEG_([a-zA-Z_]+)/\1/p'
             return 0
         case "-h"
-            FLINT_USAGE
+            __FLINT_USAGE
             return 0
         case "-v"
-            FLINT_VERSION
+            __FLINT_VERSION
             return 0
         case "--"
             break
@@ -68,7 +68,7 @@ function fishline -d "fishline prompt function"
             eval FLSEG_$seg
         end
     end
-    FLINT_CLOSE normal normal True
+    __FLINT_CLOSE normal normal True
     set -e FLINT_BCOLOR
 
 end

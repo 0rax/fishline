@@ -3,6 +3,6 @@
 
 function FLTEST_ARROW
 
-    FLINT_TEST ARROW
+    __FLINT_TEST ARROW
 
 end

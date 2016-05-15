@@ -4,9 +4,9 @@
 function FLTEST_ROOT
 
     echo "Context: USER is set to the current user"
-    FLINT_TEST ROOT
+    __FLINT_TEST ROOT
     echo "Context: USER is set to 'root'"
     set USER root
-    FLINT_TEST ROOT
+    __FLINT_TEST ROOT
 
 end

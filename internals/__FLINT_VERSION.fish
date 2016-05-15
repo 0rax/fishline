@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function FLINT_VERSION
+function __FLINT_VERSION
 
     set -l fline_version
     set -l fline_repo "https://github.com/0rax/fishline"

@@ -3,7 +3,7 @@
 
 function FLSEG_N
 
-    FLINT_CLOSE normal normal True
+    __FLINT_CLOSE normal normal True
     set -e FLINT_BCOLOR
     tput el
     printf \n

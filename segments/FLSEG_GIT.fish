@@ -38,13 +38,13 @@ function FLSEG_GIT
 
         switch $state
         case Dirty
-            FLINT_CLOSE $FLCLR_GIT_BG_DIRTY $FLCLR_GIT_FG_DIRTY
+            __FLINT_CLOSE $FLCLR_GIT_BG_DIRTY $FLCLR_GIT_FG_DIRTY
             printf "$FLSYM_GIT_BRANCH"
         case Detached
-            FLINT_CLOSE $FLCLR_GIT_BG_DETACHED $FLCLR_GIT_FG_DETACHED
+            __FLINT_CLOSE $FLCLR_GIT_BG_DETACHED $FLCLR_GIT_FG_DETACHED
             printf "$FLSYM_GIT_DETACHED"
         case '*'
-            FLINT_CLOSE $FLCLR_GIT_BG_CLEAN $FLCLR_GIT_FG_CLEAN
+            __FLINT_CLOSE $FLCLR_GIT_BG_CLEAN $FLCLR_GIT_FG_CLEAN
             printf "$FLSYM_GIT_BRANCH"
         end
 

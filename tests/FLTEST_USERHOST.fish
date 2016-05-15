@@ -3,6 +3,6 @@
 
 function FLTEST_USERHOST
 
-    FLINT_TEST USERHOST
+    __FLINT_TEST USERHOST
 
 end

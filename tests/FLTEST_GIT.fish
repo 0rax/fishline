@@ -14,33 +14,33 @@ function FLTEST_GIT
 
     echo "Context: Not in a git repository"
     cd /tmp
-    FLINT_TEST GIT
+    __FLINT_TEST GIT
 
     echo "Context: Newly checkedout repository / clean repository"
     cd /tmp/fishline_test
-    FLINT_TEST GIT
+    __FLINT_TEST GIT
 
     echo "Context: Untracked file in git repository"
     touch test_fishline
-    FLINT_TEST GIT
+    __FLINT_TEST GIT
     rm test_fishline
 
     echo "Context: Changes not staged for commit"
     echo test_fishline >> LICENSE
-    FLINT_TEST GIT
+    __FLINT_TEST GIT
     git checkout LICENSE
 
     echo "Context: Changes to be commited"
     touch test_fishline
     git add test_fishline
-    FLINT_TEST GIT
+    __FLINT_TEST GIT
     git rm -rf test_fishline > /dev/null ^ /dev/null
 
     git commit -am "Testing GIT Segment" --allow-empty > /dev/null ^ /dev/null
     git commit -am "Testing GIT Segment" --allow-empty > /dev/null ^ /dev/null
     echo "Context: with commits ahead and behind in branch dev"
     git checkout -b dev > /dev/null ^ /dev/null
-    FLINT_TEST GIT
+    __FLINT_TEST GIT
 
     echo "Context: EVERYTHING"
     touch test_fishline_untracked
@@ -48,7 +48,7 @@ function FLTEST_GIT
     touch test_fishline
     git add test_fishline
     git commit --allow-empty -m "Empty commit" > /dev/null ^ /dev/null
-    FLINT_TEST GIT
+    __FLINT_TEST GIT
 
     rm -rf /tmp/fishline_test
     cd $_OLDPWD

@@ -1,5 +1,8 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
+#
+# A tty-compatible theme (does not include any glyph)
+#
 
 # Symbol for Fishline
 set FLSYM_LEFT_PRE          "]"
@@ -11,12 +14,32 @@ set FLSYM_RIGHT_OPEN        ""
 set FLSYM_RIGHT_POST        "["
 set FLSYM_RIGHT_SEPARATOR   "/"
 
+# Symbol for ARROW segment
+set FLSYM_ARROW             "\$"
+
+# Incldue git-minimal glyph if availlable
+if test -f $FLINE_PATH/themes/git-minimal.fish
+    source $FLINE_PATH/themes/git-minimal.fish
+end
+
+# Symbol for JOBS segment
+set FLSYM_JOBS              "J"
+
 # Symbol for ROOT segment
 set FLSYM_ROOT_ROOT         "#"
 set FLSYM_ROOT_USER         "\$"
 
-# Symbol for JOBS segment
-set FLSYM_JOBS              "J"
+# Symbol for VFISH segment
+set FLSYM_VFISH             "#"
+
+# Symbol for VIMODE segment
+set FLSYM_VIMODE_DEFAULT    "NORMAL"
+set FLSYM_VIMODE_INSERT     "INSERT"
+set FLSYM_VIMODE_REPLACE    "REPLACE"
+set FLSYM_VIMODE_VISUAL     "VISUAL"
+
+# Symbol for WRITE segment
+set FLSYM_WRITE_LOCK        "X"
 
 # Color for PWD and FULLPWD segment
 set FLCLR_PWD_BG_HOME       normal
@@ -25,7 +48,6 @@ set FLCLR_PWD_BG            normal
 set FLCLR_PWD_FG            normal
 set FLCLR_FULLPWD_BG        $FLCLR_PWD_BG
 set FLCLR_FULLPWD_FG        $FLCLR_PWD_FG
-
 
 # Color for STATUS segment
 set FLCLR_STATUS_BG         normal

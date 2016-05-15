@@ -20,9 +20,9 @@ function FLSEG_PWD
         for f in $pwd[$it..$len]
             set it (expr $it + 1)
             if test $it -le $len
-                printf $f$FLSYM_SEPARATOR
+                printf "$f$FLSYM_SEPARATOR"
             else
-                printf $f
+                printf "$f"
             end
         end
 

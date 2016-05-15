@@ -6,7 +6,7 @@ function fishline -d "fishline prompt function"
     set -g FLINT_STATUS False
     set -g FLINT_POSITION Left
     set -g FLINT_FIRST True
-    set FLSYM_SEPARATOR $FLSYM_LEFT_SEPARATOR
+    set -g FLSYM_SEPARATOR $FLSYM_LEFT_SEPARATOR
 
     set -l args (getopt "lrvs:" $argv | sed -E 's/^\s//;s/\ +/ /g' | tr ' ' '\n')
     while [ (count $args) -ge 0 ]

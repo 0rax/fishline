@@ -10,9 +10,9 @@ function FLSEG_GIT
         set -l behind 0
         set -l branch (git rev-parse --abbrev-ref HEAD ^^ /dev/null)
 
-    if [ "$status" -ne 0 ] # Repository is empty
-      set branch master
-      set detached 1
+        if [ "$status" -ne 0 ] # Repository is empty
+            set branch master
+            set detached 1
         else if [ "$branch" = "HEAD" ] # Repository is detached on tags / commit
             set branch (git describe --tags --exact-match ^^ /dev/null; or git log --format=%h --abbrev-commit -1)
             set detached 1

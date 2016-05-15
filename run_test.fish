@@ -1,8 +1,9 @@
 #!/usr/bin/env fish
 
-set -g FLINE_PATH (pwd)
+set -l FLINE_PATH (dirname (status -f))
+source $FLINE_PATH/conf.d/init.fish
 
-source $FLINE_PATH/fishline.fish
+set -l fish_function_path $fish_function_path $FLINE_PATH/tests
 
 set -l SEGMENTS
 

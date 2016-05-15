@@ -50,3 +50,17 @@ set FLCLR_USERHOST_FG       white
 # Color for JOBS segment
 set FLCLR_JOBS_BG           C50
 set FLCLR_JOBS_FG           normal
+
+# Color for EXECTIME segment
+set FLCLR_EXECTIME_BG       red
+set FLCLR_EXECTIME_FG       black
+
+# Color for VIMODE segment
+set FLCLR_VIMODE_DEFAULT_BG green
+set FLCLR_VIMODE_DEFAULT_FG black
+set FLCLR_VIMODE_INSERT_BG  white
+set FLCLR_VIMODE_INSERT_FG  black
+set FLCLR_VIMODE_REPLACE_BG red
+set FLCLR_VIMODE_REPLACE_FG normal
+set FLCLR_VIMODE_VISUAL_BG  orange
+set FLCLR_VIMODE_VISUAL_FG  normal

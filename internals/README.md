@@ -25,16 +25,16 @@
 ## Global variables
 
 - `FLINT_STATUS`
-  - Possible values: `False` | copy of `-s $status` value
+  - Possible values: `false` | copy of `-s $status` value
   - Used by: `fishline` & some segments
 - `FLINT_FIRST`
-  - Possible values: `True` | `False`
+  - Possible values: `true` | `false`
   - Used by: `fishline`, `__fishline_segment` & `__fishline_segment_close`
 - `FLINT_LAST`
-  - Possible values: `True` | `False`
+  - Possible values: `true` | `false`
   - Used by: `fishline`, `__fishline_segment` & `__fishline_segment_close`
 - `FLINT_POSITION`
-  - Possible values: `Left` | `Right`
+  - Possible values: `left` | `right`
   - Used by: `fishline` & `__fishline_segment`
 - `FLINT_BCOLOR`
   - Possible values: deleted | any color

@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function FLSEG_SIGSTATUS
+function __flseg_sigstatus
 
     if [ $FLINT_STATUS -gt 128 -a $FLINT_STATUS -lt 160 ]
         __fishline_segment $FLCLR_STATUS_BG $FLCLR_STATUS_FG

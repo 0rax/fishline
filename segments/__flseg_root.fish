@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function FLSEG_ROOT
+function __flseg_root
 
     if [ "$USER" = "root" ]
         __fishline_segment $FLCLR_ROOT_BG_ROOT $FLCLR_ROOT_FG_ROOT

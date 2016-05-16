@@ -3,34 +3,36 @@
 
 function fishline -d "fishline prompt function"
 
-    set -g FLINT_STATUS     False
-    set -g FLINT_POSITION   Left
-    set -g FLINT_FIRST      True
-    set -g FLINT_LAST       False
+    set -g FLINT_STATUS     false
+    set -g FLINT_POSITION   left
+    set -g FLINT_FIRST      true
+    set -g FLINT_LAST       false
     set -g FLSYM_SEPARATOR  $FLSYM_LEFT_SEPARATOR
+
+    set -l prompt_segments  $FLINE_DEFAULT_PROMPT
     set -l args             (getopt "lrxhvs:" $argv)
 
     if [ $status -gt 0 ]
         return 1
     end
-    set args (echo $args | sed -E 's/^\s//;s/\ +/ /g' | tr ' ' '\n')
 
+    set args (echo $args | sed -E 's/^\s//;s/\ +/ /g' | tr ' ' '\n')
     while [ (count $args) -ge 0 ]
         switch $args[1]
         case "-s"
             set FLINT_STATUS $args[2]
             set args $args[2..-1]
         case "-r"
-            set FLINT_POSITION Right
+            set FLINT_POSITION right
             set FLSYM_SEPARATOR $FLSYM_RIGHT_SEPARATOR
         case "-l"
-            set FLINT_POSITION Left
+            set FLINT_POSITION left
             set FLSYM_SEPARATOR $FLSYM_LEFT_SEPARATOR
         case "-x"
-            functions | sed -nE 's/FLSEG_([a-zA-Z_]+)/\1/p'
+            functions -a | sed -nE 's/__flseg_([a-zA-Z_]+)/\1/p'
             return 0
         case "-h"
-            __fishline_sage
+            __fishline_usage
             return 0
         case "-v"
             __fishline_version
@@ -41,7 +43,7 @@ function fishline -d "fishline prompt function"
         set args $args[2..-1]
     end
 
-    if [ "$FLINT_STATUS" = "False" ]
+    if [ "$FLINT_STATUS" = "false" ]
         if [ (count $args) -ge 2 ]; and [ "$args[2]" -eq "$args[2]" ]
             set FLINT_STATUS $args[2]
             if [ (count $args) -eq 2 ]
@@ -55,19 +57,14 @@ function fishline -d "fishline prompt function"
         end
     end
 
-    set -e FLINT_BCOLOR
     if [ (count $args) -gt 1 ]
-        for seg in $args[2..-1]
-            eval FLSEG_$seg
-        end
+        set prompt_segments (echo $args[2..-1] | tr 'A-Z' 'a-z' | tr ' ' '\n')
     else if set -q FLINE_PROMPT
-        for seg in $FLINE_PROMPT
-            eval FLSEG_$seg
-        end
-    else
-        for seg in $FLINE_DEFAULT_PROMPT
-            eval FLSEG_$seg
-        end
+        set prompt_segments (echo $FLINE_PROMPT | tr 'A-Z' 'a-z' | tr ' ' '\n')
+    end
+
+    for seg in $prompt_segments
+        eval __flseg_$seg
     end
     __fishline_segment_close
 

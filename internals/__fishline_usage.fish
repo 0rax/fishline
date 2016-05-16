@@ -1,9 +1,9 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function __fishline_sage
+function __fishline_usage
 
-    printf "# %s\n" (FLINT_VERSION)
+    printf "# %s (%s)\n" (fishline -v) "https://github.com/0rax/fishline"
     printf "
 Powerline prompt for Fish Shell in Fish Shell.
 
@@ -24,8 +24,8 @@ Argument and Options:
     -s \$num Set the last command status exit code (should be internal \$status)
             This is only used by a limited number of segment but it should be
             set everytime you call fishline (if not needed set it to 0)
-    -l      Left mode: generate a fish_prompt compatible prompt (default)
-    -r      Right mode: generate a fish_right_prompt compatible prompt
+    -l      left mode: generate a fish_prompt compatible prompt (default)
+    -r      right mode: generate a fish_right_prompt compatible prompt
     -x      Print the list of availlable segment and exit
     -h      Print this help and exit
     -v      Print the software version and exit

@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function FLSEG_SPACE
+function __flseg_space
 
     __fishline_segment_close
     set -e FLINT_BCOLOR

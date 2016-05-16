@@ -3,10 +3,10 @@
 
 function __fishline_segment --argument-name bg_clr fg_clr -d "open a new fishline segment"
 
-    if [ "$FLINT_POSITION" = "Right" ]
+    if [ "$FLINT_POSITION" = "right" ]
 
-        if [ "$FLINT_LAST" != True ]
-            if not [ "$FLINT_FIRST" = True ]
+        if [ "$FLINT_LAST" != true ]
+            if not [ "$FLINT_FIRST" = true ]
                 printf "$FLSYM_RIGHT_PRE"
             end
             set_color $bg_clr
@@ -28,13 +28,13 @@ function __fishline_segment --argument-name bg_clr fg_clr -d "open a new fishlin
             set_color normal
         end
         set_color -b $bg_clr $fg_clr
-        if [ "$FLINT_LAST" != True ]
+        if [ "$FLINT_LAST" != true ]
             printf "$FLSYM_LEFT_POST"
         end
         set -g FLINT_BCOLOR $bg_clr
 
     end
 
-    set FLINT_FIRST False
+    set FLINT_FIRST false
 
 end

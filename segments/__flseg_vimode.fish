@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function FLSEG_VIMODE
+function __flseg_vimode
 
     if set -q __fish_vi_mode
 

@@ -30,4 +30,4 @@ else
 end
 
 # Default Fishline Prompt
-set FLINE_DEFAULT_PROMPT VIMODE SIGSTATUS JOBS PWD GIT WRITE N ROOT
+set FLINE_DEFAULT_PROMPT vimode sigstatus jobs pwd git write n root

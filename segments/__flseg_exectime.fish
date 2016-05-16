@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function FLSEG_EXECTIME
+function __flseg_exectime
 
     set -l duration "$CMD_DURATION"
 

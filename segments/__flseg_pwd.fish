@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function FLSEG_PWD
+function __flseg_pwd
 
     set -l pwd (prompt_pwd | sed -E 's;/?([^/]+)/;\1'\u1F';g' | tr \u1F '\n')
 

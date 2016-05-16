@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function FLSEG_GIT
+function __flseg_git
 
     if git rev-parse --git-dir >> /dev/null ^^ /dev/null
 

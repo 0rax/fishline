@@ -4,7 +4,7 @@
 function FLSEG_WRITE
 
 	if not test -w .
-		__FLINT_SEGMENT $FLCLR_WRITE_BG $FLCLR_WRITE_FG
+		__fishline_segment $FLCLR_WRITE_BG $FLCLR_WRITE_FG
 		printf "$FLSYM_WRITE_LOCK"
 	end
 

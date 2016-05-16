@@ -4,8 +4,8 @@
 function FLTEST_SPACE
 
     echo "Context: SPACE segment after ARROW segment"
-    __FLINT_TEST ARROW SPACE
+    __fishline_test ARROW SPACE
     echo "Context: SPACE segment between CLOCK and ARROW segments"
-    __FLINT_TEST CLOCK SPACE ARROW
+    __fishline_test CLOCK SPACE ARROW
 
 end

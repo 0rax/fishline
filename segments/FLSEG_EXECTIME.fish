@@ -7,7 +7,7 @@ function FLSEG_EXECTIME
 
     if [ $duration -ge 100 ]
 
-        __FLINT_SEGMENT $FLCLR_EXECTIME_BG $FLCLR_EXECTIME_FG
+        __fishline_segment $FLCLR_EXECTIME_BG $FLCLR_EXECTIME_FG
 
         set -l ms  (math "$duration%1000")
         if [ $duration -gt 60000 ]

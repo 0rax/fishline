@@ -1,23 +1,25 @@
 # Internals
-## Functions
+## Internal functions
 
-- `__FLINT_SEGMENT`
+- `__fishline_segment`
   - Arguments:
-    - `BG`: background color of the new segment
-    - `FG`: foreground color of the new segment
-  - Description: close previous segment and open a new one based on `FG` & `BG`
-- `__FLINT_SEGMENT_CLOSE`
+    - `bg_clr`: background color of the new segment
+    - `fg_clr`: foreground color of the new segment
+  - Description: close previous segment and open a new one based on `fg_clr` & `bg_clr`
+- `__fishline_segment_close`
   - Arguments: N/A
   - Description: close previous segment without opening a new one and reset colors to `normal` `normal`
-- `__FLINT_TEST`
+- `__fishline_test`
   - Arguments:
-    - `SEGMENT`: name of the segment to test
-  - Description:
-- `__FLINT_USAGE`
+    - `segment`: name of the segment to test
+  - Description: test the segment passed as argument
+- `__fishline_usage`
   - Arguments: N/A
+  - Used by: `fishline -h`
   - Description: show a small help for `fishline` and return
-- `__FLINT_VERSION`
+- `__fishline_version`
   - Arguments: N/A
+  - Used by: `fishline -v`
   - Description: show `fishline` software version based on `git describe` and exit
 
 ## Global variables
@@ -27,16 +29,16 @@
   - Used by: `fishline` & some segments
 - `FLINT_FIRST`
   - Possible values: `True` | `False`
-  - Used by: `fishline`, `__FLINT_CLOSE` & `__FLINT_SEGMENT_CLOSE`
+  - Used by: `fishline`, `__fishline_segment` & `__fishline_segment_close`
 - `FLINT_LAST`
   - Possible values: `True` | `False`
-  - Used by: `fishline`, `__FLINT_CLOSE` & `__FLINT_SEGMENT_CLOSE`
+  - Used by: `fishline`, `__fishline_segment` & `__fishline_segment_close`
 - `FLINT_POSITION`
   - Possible values: `Left` | `Right`
-  - Used by: `fishline` & `__FLINT_CLOSE`
+  - Used by: `fishline` & `__fishline_segment`
 - `FLINT_BCOLOR`
   - Possible values: deleted | any color
-  - Used by: `fishline`, `__FLINT_CLOSE` & some segments
+  - Used by: `fishline`, `__fishline_segment` & some segments
 - `FLINT_TEST_SEG`
   - Possible values: any segment
   - Used by: `__FLINT_TEST`
@@ -44,7 +46,7 @@
   - Possible values: any exit code (0-255)
   - Used by: `__FLINT_TEST`
 
-## Meta symbols
+## Special symbols
 
 - `FLSYM_SEPARATOR`
   - Possible values: `$FLSYM_LEFT_SEPARATOR` | `$FLSYM_RIGHT_SEPARATOR`

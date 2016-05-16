@@ -3,7 +3,7 @@
 
 function FLSEG_SPACE
 
-    __FLINT_SEGMENT_CLOSE
+    __fishline_segment_close
     set -e FLINT_BCOLOR
     tput el
     printf " "

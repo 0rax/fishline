@@ -6,10 +6,10 @@ function FLTEST_WRITE
     set _OLDPWD $PWD
     echo "Context: Current Working Directory is '/tmp' which should be user writable"
     cd /tmp
-    __FLINT_TEST WRITE
+    __fishline_test WRITE
     echo "Context: Current Working Directory is '/' which should not be user writable"
     cd /
-    __FLINT_TEST WRITE
+    __fishline_test WRITE
     cd $_OLDPWD
 
 end

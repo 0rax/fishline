@@ -9,14 +9,14 @@ function FLSEG_PWD
     set -l len (count $pwd)
 
     if [ "$pwd[1]" = "~" ]
-        __FLINT_SEGMENT $FLCLR_PWD_BG_HOME $FLCLR_PWD_FG_HOME
+        __fishline_segment $FLCLR_PWD_BG_HOME $FLCLR_PWD_FG_HOME
         printf "~"
         set it 2
     end
 
     if [ $it -le $len ]
 
-        __FLINT_SEGMENT $FLCLR_PWD_BG $FLCLR_PWD_FG
+        __fishline_segment $FLCLR_PWD_BG $FLCLR_PWD_FG
 
         for f in $pwd[$it..$len]
             set it (expr $it + 1)

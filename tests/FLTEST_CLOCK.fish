@@ -3,6 +3,6 @@
 
 function FLTEST_CLOCK
 
-    __FLINT_TEST CLOCK
+    __fishline_test CLOCK
 
 end

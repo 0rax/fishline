@@ -3,7 +3,7 @@
 
 function FLSEG_CLOCK
 
-    __FLINT_SEGMENT $FLCLR_CLOCK_BG $FLCLR_CLOCK_FG
+    __fishline_segment $FLCLR_CLOCK_BG $FLCLR_CLOCK_FG
     printf "%s" (date "+%H:%M")
 
 end

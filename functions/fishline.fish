@@ -3,11 +3,12 @@
 
 function fishline -d "fishline prompt function"
 
-    set -g FLINT_STATUS False
-    set -g FLINT_POSITION Left
-    set -g FLINT_FIRST True
-    set -g FLSYM_SEPARATOR $FLSYM_LEFT_SEPARATOR
-    set -l args (getopt "lrxhvs:" $argv)
+    set -g FLINT_STATUS     False
+    set -g FLINT_POSITION   Left
+    set -g FLINT_FIRST      True
+    set -g FLINT_LAST       False
+    set -g FLSYM_SEPARATOR  $FLSYM_LEFT_SEPARATOR
+    set -l args             (getopt "lrxhvs:" $argv)
 
     if [ $status -gt 0 ]
         return 1
@@ -64,11 +65,16 @@ function fishline -d "fishline prompt function"
             eval FLSEG_$seg
         end
     else
-        for seg in $FLINT_DEFAULT_PROMPT
+        for seg in $FLINE_DEFAULT_PROMPT
             eval FLSEG_$seg
         end
     end
-    __FLINT_CLOSE normal normal True
+    __FLINT_SEGMENT_CLOSE
+
     set -e FLINT_BCOLOR
+    set -e FLINT_FIRST
+    set -e FLINT_LAST
+    set -e FLINT_POSITION
+    set -e FLINT_STATUS
 
 end

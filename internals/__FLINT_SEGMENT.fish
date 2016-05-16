@@ -1,11 +1,11 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function __FLINT_CLOSE --argument-name BG FG END -d "close the previous fishline segment"
+function __FLINT_SEGMENT --argument-name BG FG -d "open a new fishline segment"
 
     if [ "$FLINT_POSITION" = "Right" ]
 
-        if [ "$END" != True ]
+        if [ "$FLINT_LAST" != True ]
             if not [ "$FLINT_FIRST" = True ]
                 printf "$FLSYM_RIGHT_PRE"
             end
@@ -29,17 +29,13 @@ function __FLINT_CLOSE --argument-name BG FG END -d "close the previous fishline
             set_color normal
         end
         set_color -b $BG $FG
-        if [ "$END" != True ]
+        if [ "$FLINT_LAST" != True ]
             printf "$FLSYM_LEFT_POST"
         end
         set -g FLINT_BCOLOR $BG
 
     end
 
-    if [ "$END" = True ]
-        set FLINT_FIRST True
-    else
-        set FLINT_FIRST False
-    end
+    set FLINT_FIRST False
 
 end

@@ -1,10 +1,10 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function __FLINT_TEST -d 'test segments'
+function __FLINT_TEST --argument-names SEGMENT -d 'test segments'
 
-    set -gx FLINT_TEST_SEG $argv
-    if not set -q FLINT_TEST_STATUS
+    set -gx FLINT_TEST_SEG $SEGMENT
+    if not set -q TEST_STATUS
         set -gx FLINT_TEST_STATUS 0
     end
 

@@ -3,7 +3,7 @@
 
 function FLSEG_SPACE
 
-    __FLINT_CLOSE normal normal True
+    __FLINT_SEGMENT_CLOSE
     set -e FLINT_BCOLOR
     tput el
     printf " "

@@ -1,6 +1,8 @@
 #!/usr/bin/env fish
-# Washed theme ported from powerline-shell
 # -*-  mode:fish; tab-width:4  -*-
+#
+# Washed theme ported from powerline-shell
+#
 
 # Color for PWD and FULLPWD segment
 set FLCLR_PWD_BG            808080

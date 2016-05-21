@@ -1,12 +1,18 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-if test -z "$FLINE_PATH" # If FLINE_PATH is not set, trying to find it from init.fish path
-    set -gx FLINE_PATH (dirname (status -f))
+# If FLINE_PATH is not set, trying to find it from init.fish path
+if test -z "$FLINE_PATH"
+    if type -q realpath
+        set -gx FLINE_PATH (dirname (realpath (status -f)))
+    else
+        set -gx FLINE_PATH (dirname (status -f))
+    end
 end
 
+# Use FLINE_PATH to load internals, functions and segments
 if [ "$FLINE_PATH" = "$HOME/.config/fish/conf.d" -a -d "$HOME/.config/fisherman/fishline" ]
-    # Assumes fishline has been installed using fisherman
+    # Assumes fishline has been installed using fisherman on system without realpath
     set -gx FLINE_PATH $HOME/.config/fisherman/fishline
     set -gx fish_function_path $fish_function_path $FLINE_PATH/internals $FLINE_PATH/segments
 else

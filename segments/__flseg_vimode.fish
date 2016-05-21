@@ -3,7 +3,10 @@
 
 function __flseg_vimode
 
-    if set -q __fish_vi_mode
+    if begin;
+            set -q __fish_vi_mode;
+            or [ "$__fish_active_key_bindings" = "fish_vi_key_bindings" ]
+       end
 
         switch $fish_bind_mode
           case default

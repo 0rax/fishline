@@ -94,3 +94,6 @@ set FLCLR_USERHOST_FG       purple
 # Color for JOBS segment
 set FLCLR_JOBS_BG           normal
 set FLCLR_JOBS_FG           brown
+
+# Color for SEPARATOR segment
+set FLCLR_SEPARATOR_BG      black

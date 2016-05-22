@@ -68,7 +68,6 @@ function fishline -d "fishline prompt function"
     end
     __fishline_segment_close
 
-    set -e FLINT_BCOLOR
     set -e FLINT_FIRST
     set -e FLINT_LAST
     set -e FLINT_POSITION

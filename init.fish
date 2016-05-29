@@ -40,4 +40,4 @@ end
 set FLINE_DEFAULT_PROMPT vimode sigstatus jobs pwd git write n root
 
 # Set Signal Code list for internal use
-set FLINT_SIGCODE (command kill -l| tr ' [a-z]' '\n[A-Z]')
+set FLSEG_STATUS_NAME (command kill -l| tr ' [a-z]' '\n[A-Z]')

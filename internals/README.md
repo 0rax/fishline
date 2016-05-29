@@ -22,7 +22,7 @@
   - Used by: `fishline -v`
   - Description: show `fishline` software version based on `git describe` and exit
 
-## Global variables
+## Internal variables (used in fishline's scope)
 
 - `FLINT_STATUS`
   - Possible values: `false` | copy of `-s $status` value
@@ -56,6 +56,13 @@
 - `FLINE_DEFAULT_PROMPT`
   - Possible values: list of segment
   - Used by: `fishline`
-- `FLINT_PROMPT`
+- `FLINE_PROMPT`
   - Possible values: list of segment
   - Used by: `fishline`
+
+## Segment initialization variables (initialized for the session)
+
+- `FLSEG_STATUS_NAME`
+  - Value: list of signal name indexed from their code
+  - Used by: `__flseg_sigstatus`
+  - Initialized in: `init.fish`

@@ -5,7 +5,7 @@ function __flseg_sigstatus
 
     if [ $FLINT_STATUS -gt 128 -a $FLINT_STATUS -lt 160 ]
         __fishline_segment $FLCLR_STATUS_BG $FLCLR_STATUS_FG
-        printf SIG(kill -l $FLINT_STATUS | tr '[a-z]' '[A-Z]')
+        printf "SIG%s" $FLINT_SIGCODE[(math "$FLINT_STATUS" - 128)]
     else if [ $FLINT_STATUS -eq 126 ]
         __fishline_segment $FLCLR_STATUS_BG $FLCLR_STATUS_FG
         printf "NOEXEC"

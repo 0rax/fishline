@@ -28,12 +28,16 @@ else
     source $FLINE_PATH/themes/default_256_colors.fish
 end
 
-# Load default symbol & themes based if on a tty or not
+# Load default symbols
+source $FLINE_PATH/themes/default_symbols.fish
+
+# Set special themes based if on a tty or not
 if begin; [ (uname) != "Darwin" ]; and tty | grep tty > /dev/null; end
     source $FLINE_PATH/themes/tty_compatible.fish
-else
-    source $FLINE_PATH/themes/default_symbols.fish
 end
 
 # Default Fishline Prompt
 set FLINE_DEFAULT_PROMPT vimode sigstatus jobs pwd git write n root
+
+# Set Signal Code list for internal use
+set FLINT_SIGCODE (command kill -l| tr ' [a-z]' '\n[A-Z]')

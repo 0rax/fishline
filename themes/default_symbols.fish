@@ -44,3 +44,7 @@ set FLSYM_WRITE_LOCK        "\uE0A2"
 
 # Symbol for SEPARATOR segment
 set FLSYM_SEPARATOR_SEG     ""
+
+# Symbol for FISH segment (textual version)
+set FLSYM_FISH_ASCII_LEFT   ">((*>"
+set FLSYM_FISH_ASCII_RIGHT  "<*))<"

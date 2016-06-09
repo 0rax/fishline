@@ -76,3 +76,10 @@ set FLCLR_VIMODE_VISUAL_FG  white
 # Color for SEPARATOR segment
 set FLCLR_SEPARATOR_BG      black
 set FLCLR_SEPARATOR_FG      white
+
+# Color for FISH segment
+set FLCLR_FISH              $__256_yellow
+
+# Color for FISH segment when not using Powerline glyph in your theme
+set FLCLR_FISH_FG           $__256_yellow
+set FLCLR_FISH_BG           normal

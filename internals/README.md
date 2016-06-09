@@ -5,10 +5,12 @@
   - Arguments:
     - `bg_clr`: background color of the new segment
     - `fg_clr`: foreground color of the new segment
-  - Description: close previous segment and open a new one based on `fg_clr` & `bg_clr`
+    - `pre`:    print `FLSYM_{LEFT|RIGHT}_PRE` in the new segment  [optional, default: true]
+    - `post`:   print `FLSYM_{LEFT|RIGHT}_POST` in the new segment [optional, default: true]
+  - Description: create a new segment based on `fg_clr` & `bg_clr`
 - `__fishline_segment_close`
   - Arguments: N/A
-  - Description: close previous segment without opening a new one and reset colors to `normal` `normal`
+  - Description: close the line (previous segment) and colors to `normal` `normal`
 - `__fishline_test`
   - Arguments:
     - `segment`: name of the segment to test
@@ -38,7 +40,13 @@
   - Used by: `fishline` & `__fishline_segment`
 - `FLINT_BCOLOR`
   - Possible values: deleted | any color
-  - Used by: `fishline`, `__fishline_segment` & some segments
+  - Used by: `fishline`, `__fishline_segment`
+- `FLINT_PRINT_POST`
+  - Possible values: `true` | `false`
+  - Used by: `fishline`, `__fishline_segment`
+- `FLINT_INVERT`
+  - Possible values: `true` | `false`
+  - Used by: `fishline`, `__fishline_segment`, `__flseg_invert`
 - `FLINT_TEST_SEG`
   - Possible values: any segment
   - Used by: `__FLINT_TEST`

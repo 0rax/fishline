@@ -3,15 +3,17 @@
 
 function fishline -d "fishline prompt function"
 
-    set -g FLINT_STATUS     false
     set -g FLINT_POSITION   left
+    set -g FLSYM_SEPARATOR  $FLSYM_LEFT_SEPARATOR
     set -g FLINT_FIRST      true
     set -g FLINT_LAST       false
-    set -g FLSYM_SEPARATOR  $FLSYM_LEFT_SEPARATOR
+    set -g FLINT_BCOLOR     normal
+    set -g FLINT_PRINT_POST true
+    set -g FLINT_INVERT     false
+    set -g FLINT_STATUS     false
 
     set -l prompt_segments  $FLINE_DEFAULT_PROMPT
     set -l args             (getopt "lrxhvs:" $argv)
-
     if [ $status -gt 0 ]
         return 1
     end
@@ -52,7 +54,7 @@ function fishline -d "fishline prompt function"
                 set args -- $args[3..-1]
             end
         else
-            echo "Warning: last status not passed as positional '-s' argument to fishline"
+            echo "Warning: last status not passed as positional '-s' argument to fishline" >&2
             set FLINT_STATUS 0
         end
     end
@@ -72,5 +74,8 @@ function fishline -d "fishline prompt function"
     set -e FLINT_LAST
     set -e FLINT_POSITION
     set -e FLINT_STATUS
+    set -e FLINT_BCOLOR
+    set -e FLINT_INVERT
+    set -e FLINT_PRINT_POST
 
 end

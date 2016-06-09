@@ -3,10 +3,10 @@
 
 function __fishline_segment_close -d "close the previous fishline segment"
 
-    set FLINT_LAST true
-    __fishline_segment normal normal
-    set FLINT_LAST false
-    set -e FLINT_BCOLOR
-    set FLINT_FIRST true
+    if [ "$FLINT_FIRST" != "true" ]
+        set FLINT_LAST       true
+        __fishline_segment normal normal
+        set FLINT_FIRST      true
+    end
 
 end

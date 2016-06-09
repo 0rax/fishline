@@ -1,27 +1,27 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-function __fishline_segment --argument-name bg_clr fg_clr -d "open a new fishline segment"
+function __fishline_segment --argument-name bg_clr fg_clr pre post -d "open a new fishline segment"
 
-    if [ "$FLINT_POSITION" = "right" ]
+    if [ "$FLINT_INVERT" = "true" -a "$FLINT_POSITION" = "left" ]; or [ "$FLINT_INVERT" != "true" -a "$FLINT_POSITION" = "right" ]
+
+        if [ "$FLINT_FIRST" != true ]
+            [ "$FLINT_PRINT_POST" = true ]; and printf "$FLSYM_RIGHT_POST"
+        end
 
         if [ "$FLINT_LAST" != true ]
-            if not [ "$FLINT_FIRST" = true ]
-                printf "$FLSYM_RIGHT_PRE"
-            end
             set_color $bg_clr
             printf "$FLSYM_RIGHT_OPEN"
             set_color $fg_clr -b $bg_clr
-            printf "$FLSYM_RIGHT_POST"
+            [ "$pre" = false ]; or printf "$FLSYM_RIGHT_PRE"
         else
-            printf "$FLSYM_RIGHT_PRE"
             set_color normal -b normal
         end
 
     else
 
-        if set -q FLINT_BCOLOR
-            printf "$FLSYM_LEFT_PRE"
+        if [ "$FLINT_FIRST" != true ]
+            [ "$FLINT_PRINT_POST" = true ]; and printf "$FLSYM_LEFT_POST"
             set_color -b $bg_clr
             set_color "$FLINT_BCOLOR"
             printf $FLSYM_LEFT_CLOSE
@@ -29,12 +29,15 @@ function __fishline_segment --argument-name bg_clr fg_clr -d "open a new fishlin
         end
         set_color -b $bg_clr $fg_clr
         if [ "$FLINT_LAST" != true ]
-            printf "$FLSYM_LEFT_POST"
+            [ "$pre" = false ]; or printf "$FLSYM_LEFT_PRE"
         end
-        set -g FLINT_BCOLOR $bg_clr
 
     end
 
-    set FLINT_FIRST false
+    set FLINT_BCOLOR $bg_clr
+    set FLINT_FIRST  false
+    set FLINT_LAST   false
+    set FLINT_INVERT false
+    [ "$post" = false ]; and set FLINT_PRINT_POST false; or set FLINT_PRINT_POST true
 
 end

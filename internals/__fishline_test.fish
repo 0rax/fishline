@@ -3,9 +3,9 @@
 
 function __fishline_test --argument-names segment -d 'test segments'
 
-    set -gx FLINT_TEST_SEG $segment
+    set -g FLINT_TEST_SEG $segment
     if not set -q FLINT_TEST_STATUS
-        set -gx FLINT_TEST_STATUS 0
+        set -g FLINT_TEST_STATUS 0
     end
 
     function flint_test_right
@@ -18,6 +18,7 @@ function __fishline_test --argument-names segment -d 'test segments'
 
     read -R flint_test_right -p flint_test_left
 
+    set -e FLINT_TEST_SEG
     set -e FLINT_TEST_STATUS
 
 end

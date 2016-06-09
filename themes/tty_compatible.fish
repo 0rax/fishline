@@ -5,14 +5,14 @@
 #
 
 # Symbol for Fishline
-set FLSYM_LEFT_PRE          "]"
+set FLSYM_LEFT_PRE          "["
 set FLSYM_LEFT_CLOSE        ""
-set FLSYM_LEFT_POST         "["
 set FLSYM_LEFT_SEPARATOR    "/"
-set FLSYM_RIGHT_PRE         "]"
+set FLSYM_LEFT_POST         "]"
+set FLSYM_RIGHT_PRE         "["
 set FLSYM_RIGHT_OPEN        ""
-set FLSYM_RIGHT_POST        "["
 set FLSYM_RIGHT_SEPARATOR   "/"
+set FLSYM_RIGHT_POST        "]"
 
 # Symbol for ARROW segment
 set FLSYM_ARROW             "\$"
@@ -44,6 +44,9 @@ set FLSYM_VIMODE_VISUAL     "VISUAL"
 
 # Symbol for WRITE segment
 set FLSYM_WRITE_LOCK        "X"
+
+# Symbol for SEPARATOR segment
+set FLSYM_SEPARATOR_SEG     "|"
 
 # Color for PWD and FULLPWD segment
 set FLCLR_PWD_BG_HOME       normal
@@ -96,4 +99,5 @@ set FLCLR_JOBS_BG           normal
 set FLCLR_JOBS_FG           brown
 
 # Color for SEPARATOR segment
-set FLCLR_SEPARATOR_BG      black
+set FLCLR_SEPARATOR_BG      normal
+set FLCLR_SEPARATOR_FG      white

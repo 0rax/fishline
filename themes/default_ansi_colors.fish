@@ -67,3 +67,6 @@ set FLCLR_VIMODE_VISUAL_FG  normal
 
 # Color for SEPARATOR segment
 set FLCLR_SEPARATOR_BG      black
+# Color for SEPARATOR segment
+set FLCLR_SEPARATOR_BG      black
+set FLCLR_SEPARATOR_FG      white

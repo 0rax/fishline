@@ -4,7 +4,6 @@
 function __flseg_n
 
     __fishline_segment_close
-    set -e FLINT_BCOLOR
     tput el
     printf \n
 

@@ -10,18 +10,18 @@ function __flseg_git
         set -l behind 0
         set -l branch (git rev-parse --abbrev-ref HEAD ^^ /dev/null)
 
-        if [ "$status" -ne 0 ] # Repository is empty
-            set branch master
+        if [ "$status" -ne 0 ] # Repository is empty
+            set branch (git status —porcelain -b | head -n1 | cut -d' ' -f 3-)
             set detached 1
         else if [ "$branch" = "HEAD" ] # Repository is detached on tags / commit
-            set branch (git describe --tags --exact-match ^^ /dev/null; or git log --format=%h --abbrev-commit -1)
+            set branch (git describe --tags --exact-match ^^ /dev/null; or git log --format=%h --abbrev-commit -1 ^^ /dev/null)
             set detached 1
         else if git rev-parse --verify --quiet origin/$branch ^^ /dev/null >> /dev/null
             set ahead (git rev-list origin/$branch..$branch | wc -l)
             set behind (git rev-list $branch..origin/$branch | wc -l)
         end
 
-        # http://git-scm.com/docs/git-status
+        # http://git-scm.com/docs/git-status
         set -l gitstatus (git status --porcelain ^^ /dev/null | cut -c 1-2 | awk 'BEGIN {s=0; n=0; u=0; t=0}; /^[MARCDU].$/ {s=1}; /^.[MDAU]$/ {n=1}; /^\?\?$/ {u=1}; {t=s+n+u} END {printf("%s\n%d\n%d\n%d", t, s, n, u)}')
         # bool gitstatus[1] any changes
         # bool gitstatus[2] staged changes

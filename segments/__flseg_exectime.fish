@@ -13,7 +13,7 @@ function __flseg_exectime
         if [ $duration -gt 36000000 ]
             set -l h   (math "$duration/36000000")
             set -l min (math "$duration/60000%60")
-            printf "%hh %sm" $h $min
+            printf "%sh %sm" $h $min
         else if [ $duration -gt 60000 ]
             set -l min (math "$duration/60000")
             set -l s   (math "$duration/1000%60")

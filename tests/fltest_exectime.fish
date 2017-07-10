@@ -19,4 +19,8 @@ function fltest_exectime
     set -gx CMD_DURATION 162320
     __fishline_test EXECTIME
 
+    echo "Context: Last command took 72162042ms to complete"
+    set -gx CMD_DURATION 72162042
+    __fishline_test EXECTIME
+
 end

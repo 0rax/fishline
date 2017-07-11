@@ -55,7 +55,7 @@ while [ (count $args) -ge 0 ]
 end
 
 # Init fishline
-set -l FLINE_PATH (dirname (status -f))/..
+set -l FLINE_PATH (git rev-parse --show-toplevel)
 source $FLINE_PATH/init.fish
 set -l fish_function_path $fish_function_path $FLINE_PATH/tests
 

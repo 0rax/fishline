@@ -37,7 +37,7 @@ set FLSYM_ROOT_USER         "\$"
 set FLSYM_VFISH             "#"
 
 # Symbol for CONDA segment
-set FLSYM_CONDA             "#"
+set FLSYM_CONDA             "conda:"
 
 # Symbol for VIMODE segment
 set FLSYM_VIMODE_DEFAULT    "NORMAL"

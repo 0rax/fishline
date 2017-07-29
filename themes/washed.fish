@@ -34,6 +34,10 @@ set FLCLR_ROOT_FG_ROOT      $FLCLR_PWD_FG
 set FLCLR_VFISH_BG          AFD787
 set FLCLR_VFISH_FG          black
 
+# Color for CONDA  segment
+set FLCLR_CONDA_BG          AFD787
+set FLCLR_CONDA_FG          black
+
 # Color for GIT segment
 set FLCLR_GIT_BG_CLEAN      AFD787
 set FLCLR_GIT_FG_CLEAN      262626

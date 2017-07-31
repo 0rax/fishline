@@ -108,6 +108,10 @@ set FLCLR_USERHOST_FG       purple
 set FLCLR_JOBS_BG           normal
 set FLCLR_JOBS_FG           brown
 
+# Color for EXECTIME segment
+set FLCLR_EXECTIME_BG       normal
+set FLCLR_EXECTIME_FG       red
+
 # Color for SCREEN segment
 set FLCLR_SCREEN_BG         normal
 set FLCLR_SCREEN_FG         cyan

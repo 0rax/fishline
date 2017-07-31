@@ -7,11 +7,11 @@ function fltest_pwd
     echo "Context: Current Working Directory is '/'"
     cd /
     __fishline_test PWD
-    echo "Context: Current Working Directory is '/tmp'"
-    cd /tmp
+    echo "Context: Current Working Directory is '/dev'"
+    cd /dev
     __fishline_test PWD
-    echo "Context: Current Working Directory is '/var/log'"
-    cd /var/log
+    echo "Context: Current Working Directory is '/usr/local/bin'"
+    cd /usr/local/bin
     __fishline_test PWD
     echo "Context: Current Working Directory is '$HOME'"
     cd $HOME

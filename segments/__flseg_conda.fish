@@ -5,7 +5,7 @@ function __flseg_conda
 
     if set -q CONDA_DEFAULT_ENV
         __fishline_segment $FLCLR_CONDA_BG $FLCLR_CONDA_FG
-        printf $FLSYM_CONDA" "(basename $CONDA_DEFAULT_ENV)
+        printf "$FLSYM_CONDA"(basename $CONDA_DEFAULT_ENV)
     end
 
 end

@@ -70,7 +70,7 @@ set FLCLR_STATUS_FG         red
 set FLCLR_WRITE_BG          normal
 set FLCLR_WRITE_FG          red
 
-# Color for ARROW  segment
+# Color for ARROW segment
 set FLCLR_ARROW_BG          normal
 set FLCLR_ARROW_FG          white
 
@@ -80,9 +80,13 @@ set FLCLR_ROOT_FG_USER      white
 set FLCLR_ROOT_BG_ROOT      normal
 set FLCLR_ROOT_FG_ROOT      red
 
-# Color for VFISH  segment
+# Color for VFISH segment
 set FLCLR_VFISH_BG          normal
 set FLCLR_VFISH_FG          green
+
+# Color for CONDA segment
+set FLCLR_CONDA_BG          $FLCLR_VFISH_BG
+set FLCLR_CONDA_FG          $FLCLR_VFISH_FG
 
 # Color for GIT segment
 set FLCLR_GIT_BG_CLEAN      normal
@@ -105,8 +109,8 @@ set FLCLR_JOBS_BG           normal
 set FLCLR_JOBS_FG           brown
 
 # Color for SCREEN segment
-set FLCLR_SCREEN_BG         cyan
-set FLCLR_SCREEN_FG         white
+set FLCLR_SCREEN_BG         normal
+set FLCLR_SCREEN_FG         cyan
 
 # Color for SEPARATOR segment
 set FLCLR_SEPARATOR_BG      normal

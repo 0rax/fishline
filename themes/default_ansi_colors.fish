@@ -27,11 +27,11 @@ set FLCLR_ROOT_FG_USER      black
 set FLCLR_ROOT_BG_ROOT      red
 set FLCLR_ROOT_FG_ROOT      normal
 
-# Color for VFISH  segment
+# Color for VFISH segment
 set FLCLR_VFISH_BG          green
 set FLCLR_VFISH_FG          black
 
-# Color for CONDA  segment
+# Color for CONDA segment
 set FLCLR_CONDA_BG          $FLCLR_VFISH_BG
 set FLCLR_CONDA_FG          $FLCLR_VFISH_FG
 

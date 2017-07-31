@@ -31,13 +31,13 @@ set FLSYM_ROOT_ROOT         "\u221E"
 set FLSYM_ROOT_USER         "\u2192"
 
 # Symbol for VFISH segment
-set FLSYM_VFISH             "\u2635"
+set FLSYM_VFISH             "\u2635 "
 
 # Symbol for CONDA segment
-set FLSYM_CONDA             "\u223F"
+set FLSYM_CONDA             "\u223F "
 
 # Symbol for SCREEN segment
-set FLSYM_SCREEN            "\u239A"
+set FLSYM_SCREEN            "\u239A "
 
 # Symbol for VIMODE segment
 set FLSYM_VIMODE_DEFAULT    "NORMAL"

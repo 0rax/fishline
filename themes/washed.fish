@@ -20,7 +20,7 @@ set FLCLR_STATUS_FG         white
 set FLCLR_WRITE_BG          FF875F
 set FLCLR_WRITE_FG          FFFFFF
 
-# Color for ARROW  segment
+# Color for ARROW segment
 set FLCLR_ARROW_BG          $FLCLR_PWD_BG
 set FLCLR_ARROW_FG          $FLCLR_PWD_FG
 
@@ -30,11 +30,11 @@ set FLCLR_ROOT_FG_USER      $FLCLR_PWD_FG
 set FLCLR_ROOT_BG_ROOT      red
 set FLCLR_ROOT_FG_ROOT      $FLCLR_PWD_FG
 
-# Color for VFISH  segment
+# Color for VFISH segment
 set FLCLR_VFISH_BG          AFD787
 set FLCLR_VFISH_FG          black
 
-# Color for CONDA  segment
+# Color for CONDA segment
 set FLCLR_CONDA_BG          $FLCLR_VFISH_BG
 set FLCLR_CONDA_FG          $FLCLR_VFISH_FG
 

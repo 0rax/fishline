@@ -35,8 +35,8 @@ set FLCLR_VFISH_BG          AFD787
 set FLCLR_VFISH_FG          black
 
 # Color for CONDA  segment
-set FLCLR_CONDA_BG          AFD787
-set FLCLR_CONDA_FG          black
+set FLCLR_CONDA_BG          $FLCLR_VFISH_BG
+set FLCLR_CONDA_FG          $FLCLR_VFISH_FG
 
 # Color for GIT segment
 set FLCLR_GIT_BG_CLEAN      AFD787

@@ -59,6 +59,10 @@ set FLCLR_JOBS_FG           normal
 set FLCLR_EXECTIME_BG       red
 set FLCLR_EXECTIME_FG       black
 
+# Color for SCREEN segment
+set FLCLR_SCREEN_BG         cyan
+set FLCLR_SCREEN_FG         white
+
 # Color for VIMODE segment
 set FLCLR_VIMODE_DEFAULT_BG green
 set FLCLR_VIMODE_DEFAULT_FG black

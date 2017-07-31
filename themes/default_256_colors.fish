@@ -7,6 +7,7 @@ set __256_grey              4e4e4e
 set __256_green             5d5
 set __256_yellow            fd0
 set __256_purple            868
+set __256_cyan              688
 set __256_white             eee
 
 # Color for PWD and FULLPWD segment
@@ -66,6 +67,10 @@ set FLCLR_JOBS_FG           black
 # Color for EXECTIME segment
 set FLCLR_EXECTIME_BG       $__256_red
 set FLCLR_EXECTIME_FG       white
+
+# Color for SCREEN segment
+set FLCLR_SCREEN_BG         $__256_cyan
+set FLCLR_SCREEN_FG         white
 
 # Color for VIMODE segment
 set FLCLR_VIMODE_DEFAULT_BG $__256_green

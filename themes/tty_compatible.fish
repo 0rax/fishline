@@ -39,6 +39,9 @@ set FLSYM_VFISH             "#"
 # Symbol for CONDA segment
 set FLSYM_CONDA             "conda:"
 
+# Symbol for SCREEN segment
+set FLSYM_SCREEN            "screen:"
+
 # Symbol for VIMODE segment
 set FLSYM_VIMODE_DEFAULT    "NORMAL"
 set FLSYM_VIMODE_INSERT     "INSERT"
@@ -100,6 +103,10 @@ set FLCLR_USERHOST_FG       purple
 # Color for JOBS segment
 set FLCLR_JOBS_BG           normal
 set FLCLR_JOBS_FG           brown
+
+# Color for SCREEN segment
+set FLCLR_SCREEN_BG         cyan
+set FLCLR_SCREEN_FG         white
 
 # Color for SEPARATOR segment
 set FLCLR_SEPARATOR_BG      normal

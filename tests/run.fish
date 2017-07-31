@@ -80,6 +80,7 @@ echo
 # Load themes
 for theme in $themes
     println "Loading theme: $theme"
+    source $theme
 end
 
 # Run tests

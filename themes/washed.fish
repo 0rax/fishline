@@ -59,5 +59,5 @@ set FLCLR_JOBS_BG           808080
 set FLCLR_JOBS_FG           00FFFF
 
 # Color for SCREEN segment
-set FLCLR_SCREEN_BG         060808
+set FLCLR_SCREEN_BG         608080
 set FLCLR_SCREEN_FG         FFFFFF

@@ -34,7 +34,7 @@ set FLSYM_ROOT_ROOT         "#"
 set FLSYM_ROOT_USER         "\$"
 
 # Symbol for VFISH segment
-set FLSYM_VFISH             "#"
+set FLSYM_VFISH             "vfish:"
 
 # Symbol for CONDA segment
 set FLSYM_CONDA             "conda:"

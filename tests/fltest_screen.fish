@@ -3,16 +3,16 @@
 
 function fltest_screen
 
-    echo "Context: STY var is set to 'fishline_test'"
-    # Test for custom session names
-    set -gx STY 76230.test123
+    echo "Context: STY var is set to '76230.fishline_test' (custom session name)"
+    set -gx STY 76230.fishline_test
     __fishline_test SCREEN
 
-    # Automated OSX-style name
-    set -gx STY 69359.ttys001.Providence
+    echo "Context: STY var is set to '69359.ttys001.MacbookPro' (automated OSX session name)"
+    set -gx STY 69359.ttys001.MacbookPro
     __fishline_test SCREEN
 
-    # Automated linux-style name
-    set -gx STY 20424.pts-0.userctl
+    echo "Context: STY var is set to '20424.pts-0.debian' (automated Linux session name)"
+    set -gx STY 20424.pts-0.debian
     __fishline_test SCREEN
+
 end

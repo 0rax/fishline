@@ -55,8 +55,8 @@ set FLCLR_USERHOST_BG       c0c0c0
 set FLCLR_USERHOST_FG       808080
 
 # Color for JOBS segment
-set FLCLR_JOBS_BG         	808080
-set FLCLR_JOBS_FG         	00FFFF
+set FLCLR_JOBS_BG           808080
+set FLCLR_JOBS_FG           00FFFF
 
 # Color for SCREEN segment
 set FLCLR_SCREEN_BG         060808

@@ -7,6 +7,7 @@ set __256_grey              4e4e4e
 set __256_green             5d5
 set __256_yellow            fd0
 set __256_purple            868
+set __256_cyan              688
 set __256_white             eee
 
 # Color for PWD and FULLPWD segment
@@ -25,7 +26,7 @@ set FLCLR_STATUS_FG         white
 set FLCLR_WRITE_BG          $__256_red
 set FLCLR_WRITE_FG          white
 
-# Color for ARROW  segment
+# Color for ARROW segment
 set FLCLR_ARROW_BG          4e4e4e
 set FLCLR_ARROW_FG          white
 
@@ -35,9 +36,13 @@ set FLCLR_ROOT_FG_USER      white
 set FLCLR_ROOT_BG_ROOT      $__256_red
 set FLCLR_ROOT_FG_ROOT      white
 
-# Color for VFISH  segment
+# Color for VFISH segment
 set FLCLR_VFISH_BG          $__256_green
 set FLCLR_VFISH_FG          black
+
+# Color for CONDA segment
+set FLCLR_CONDA_BG          $FLCLR_VFISH_BG
+set FLCLR_CONDA_FG          $FLCLR_VFISH_FG
 
 # Color for GIT segment
 set FLCLR_GIT_BG_CLEAN      $__256_yellow
@@ -63,6 +68,10 @@ set FLCLR_JOBS_FG           black
 set FLCLR_EXECTIME_BG       $__256_red
 set FLCLR_EXECTIME_FG       white
 
+# Color for SCREEN segment
+set FLCLR_SCREEN_BG         $__256_cyan
+set FLCLR_SCREEN_FG         white
+
 # Color for VIMODE segment
 set FLCLR_VIMODE_DEFAULT_BG $__256_green
 set FLCLR_VIMODE_DEFAULT_FG black
@@ -77,9 +86,9 @@ set FLCLR_VIMODE_VISUAL_FG  white
 set FLCLR_SEPARATOR_BG      black
 set FLCLR_SEPARATOR_FG      white
 
-# Color for FISH segment
+# Color for FISH segment
 set FLCLR_FISH              $__256_yellow
 
-# Color for FISH segment when not using Powerline glyph in your theme
+# Color for FISH segment when not using Powerline glyph in your theme
 set FLCLR_FISH_FG           $__256_yellow
 set FLCLR_FISH_BG           normal

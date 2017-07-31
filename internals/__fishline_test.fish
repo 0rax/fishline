@@ -16,8 +16,9 @@ function __fishline_test --argument-names segment -d 'test segments'
         fishline -l -s $FLINT_TEST_STATUS $FLINT_TEST_SEG
     end
 
-    read -R flint_test_right -p flint_test_left
+    read -R flint_test_right -p flint_test_left TEST_VAR
 
+    set -e FLINT_TEST_VAR
     set -e FLINT_TEST_SEG
     set -e FLINT_TEST_STATUS
 

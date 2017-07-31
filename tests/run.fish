@@ -28,6 +28,13 @@ Argument and Options:
 
 end
 
+function println
+
+    printf '%*s\r' (tput cols) '' | tr ' ' _
+    printf '__ %s \n\n' $argv
+
+end
+
 set -l segments
 set -l themes
 set -l all_seg false
@@ -55,7 +62,7 @@ while [ (count $args) -ge 0 ]
 end
 
 # Init fishline
-set -l FLINE_PATH (dirname (status -f))/..
+set -l FLINE_PATH (git rev-parse --show-toplevel)
 source $FLINE_PATH/init.fish
 set -l fish_function_path $fish_function_path $FLINE_PATH/tests
 
@@ -71,24 +78,21 @@ end
 echo
 
 # Load themes
-[ "$themes" != "" ]; and echo
 for theme in $themes
-    printf '%*s\r' (tput cols) '' | tr ' ' -
-    printf "-- Loading theme: %s --\n" $theme
+    println "Loading theme: $theme"
     source $theme
 end
 
 # Run tests
 for seg in (echo $segments | tr 'A-Z' 'a-z' | tr ' ' '\n')
-    printf '%*s\r' (tput cols) '' | tr ' ' -
-    printf "-- Testing segment: %s --\n\n" $seg
+    println "Testing segment: $seg"
 
     if functions fltest_$seg > /dev/null
         eval fltest_$seg
     else
-        printf "No test availlable for segment: %s\n\n" $seg
+        printf "No test availlable for segment: %s\n" $seg
     end
+    printf "\n"
 
 end
-printf '%*s\r' (tput cols) '' | tr ' ' -
-printf "-- Done Testing --\n\n" $seg
+println "Done Testing "

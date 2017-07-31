@@ -21,7 +21,7 @@ Here is an example on how to do it, by cloning `fishline` in your `~/.config/fis
 git clone https://github.com/0rax/fishline.git/ ~/.config/fish/fishline
 ```
 
-Then modify your ``~/.config/fish/config.fish` and add:
+Then modify your `~/.config/fish/config.fish` and add:
 ```sh
 set FLINE_PATH $HOME/.config/fish/fishline
 source $FLINE_PATH/init.fish

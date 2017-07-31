@@ -34,7 +34,13 @@ set FLSYM_ROOT_ROOT         "#"
 set FLSYM_ROOT_USER         "\$"
 
 # Symbol for VFISH segment
-set FLSYM_VFISH             "#"
+set FLSYM_VFISH             "vfish:"
+
+# Symbol for CONDA segment
+set FLSYM_CONDA             "conda:"
+
+# Symbol for SCREEN segment
+set FLSYM_SCREEN            "screen:"
 
 # Symbol for VIMODE segment
 set FLSYM_VIMODE_DEFAULT    "NORMAL"
@@ -64,7 +70,7 @@ set FLCLR_STATUS_FG         red
 set FLCLR_WRITE_BG          normal
 set FLCLR_WRITE_FG          red
 
-# Color for ARROW  segment
+# Color for ARROW segment
 set FLCLR_ARROW_BG          normal
 set FLCLR_ARROW_FG          white
 
@@ -74,9 +80,13 @@ set FLCLR_ROOT_FG_USER      white
 set FLCLR_ROOT_BG_ROOT      normal
 set FLCLR_ROOT_FG_ROOT      red
 
-# Color for VFISH  segment
+# Color for VFISH segment
 set FLCLR_VFISH_BG          normal
 set FLCLR_VFISH_FG          green
+
+# Color for CONDA segment
+set FLCLR_CONDA_BG          $FLCLR_VFISH_BG
+set FLCLR_CONDA_FG          $FLCLR_VFISH_FG
 
 # Color for GIT segment
 set FLCLR_GIT_BG_CLEAN      normal
@@ -97,6 +107,14 @@ set FLCLR_USERHOST_FG       purple
 # Color for JOBS segment
 set FLCLR_JOBS_BG           normal
 set FLCLR_JOBS_FG           brown
+
+# Color for EXECTIME segment
+set FLCLR_EXECTIME_BG       normal
+set FLCLR_EXECTIME_FG       red
+
+# Color for SCREEN segment
+set FLCLR_SCREEN_BG         normal
+set FLCLR_SCREEN_FG         cyan
 
 # Color for SEPARATOR segment
 set FLCLR_SEPARATOR_BG      normal

@@ -34,7 +34,7 @@ set FLSYM_ROOT_USER         "\u2192"
 set FLSYM_VFISH             "\u2635"
 
 # Symbol for CONDA segment
-set FLSYM_CONDA             "\U0001F40D"
+set FLSYM_CONDA             "\U223F"
 
 # Symbol for VIMODE segment
 set FLSYM_VIMODE_DEFAULT    "NORMAL"

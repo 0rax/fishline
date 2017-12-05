@@ -1,8 +1,13 @@
-# fishline
+<p align="center">
+    <a href="README.md"><img src="https://raw.githubusercontent.com/0rax/fishline/screenshots/logo.png" width=512 style="margin-bottom:0px"></img></a>
+</p>
+<h4 align="center">A powerline prompt framework for the fish-shell built in fish-shell</h4>
+<p align="center">
+    <a href="https://github.com/0rax/fishline/releases/latest"><img src="https://img.shields.io/github/release/0rax/fishline.svg" alt="Latest release"></a>
+    <a href="https://gitter.im/0rax/fishline?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/0rax/fishline"></a>
+</p>
 
-[![Join the chat at https://gitter.im/0rax/fishline](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/0rax/fishline?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-**A powerline prompt framework for the fish-shell built in fish-shell.**
+## Preview
 
 ![fishline_preview](https://raw.githubusercontent.com/0rax/fishline/screenshots/prompt.png "Fishline Preview")
 

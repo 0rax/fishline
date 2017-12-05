@@ -100,7 +100,9 @@ set FLCLR_GIT_FG_DETACHED   red
 set FLCLR_CLOCK_BG          normal
 set FLCLR_CLOCK_FG          yellow
 
-# Color for USERHOST segment
+# Color for USER and USERHOST segments
+set FLCLR_USER_BG           normal
+set FLCLR_USER_FG           purple
 set FLCLR_USERHOST_BG       normal
 set FLCLR_USERHOST_FG       purple
 

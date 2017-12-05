@@ -48,8 +48,8 @@ set FLCLR_CLOCK_BG          white
 set FLCLR_CLOCK_FG          black
 
 # Color for USER and USERHOST segments
-set FLCLR_USER_BG       cyan
-set FLCLR_USER_FG       normal
+set FLCLR_USER_BG           cyan
+set FLCLR_USER_FG           normal
 set FLCLR_USERHOST_BG       cyan
 set FLCLR_USERHOST_FG       normal
 

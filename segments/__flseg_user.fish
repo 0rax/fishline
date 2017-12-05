@@ -3,7 +3,7 @@
 
 function __flseg_user
 
-    __fishline_segment $FLCLR_USERHOST_BG $FLCLR_USERHOST_FG
+    __fishline_segment $FLCLR_USER_BG $FLCLR_USER_FG
     printf $USER
 
 end

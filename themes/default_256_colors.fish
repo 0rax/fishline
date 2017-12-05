@@ -57,8 +57,8 @@ set FLCLR_CLOCK_BG          $__256_blue
 set FLCLR_CLOCK_FG          white
 
 # Color for USER and USERHOST segments
-set FLCLR_USERHOST_FG       black
-set FLCLR_USER_BG       $__256_white
+set FLCLR_USER_BG           $__256_white
+set FLCLR_USER_FG           black
 set FLCLR_USERHOST_BG       $__256_white
 set FLCLR_USERHOST_FG       black
 

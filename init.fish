@@ -15,11 +15,11 @@ if test -z "$FLINE_INIT"
     # Use FLINE_PATH to load internals, functions and segments
     if [ "$FLINE_PATH" = "$HOME/.config/fish/conf.d" -a -d "$HOME/.config/fisherman/fishline" ]
         # Assumes fishline has been installed using fisherman on system without realpath
-        set -g FLINE_PATH $HOME/.config/fisherman/fishline
-        set -g fish_function_path $fish_function_path $FLINE_PATH/internals $FLINE_PATH/segments
+        set -gx FLINE_PATH $HOME/.config/fisherman/fishline
+        set -ga fish_function_path $FLINE_PATH/internals $FLINE_PATH/segments
     else
         # Standard installation, add function loading path
-        set -g fish_function_path $fish_function_path $FLINE_PATH/functions $FLINE_PATH/internals $FLINE_PATH/segments
+        set -ga fish_function_path $FLINE_PATH/functions $FLINE_PATH/internals $FLINE_PATH/segments
     end
 end
 

@@ -28,8 +28,10 @@ git clone https://github.com/0rax/fishline.git/ ~/.config/fish/fishline
 
 Then modify your `~/.config/fish/config.fish` and add:
 ```sh
-set FLINE_PATH $HOME/.config/fish/fishline
-source $FLINE_PATH/init.fish
+if status is-interactive
+    set FLINE_PATH $HOME/.config/fish/fishline
+    source $FLINE_PATH/init.fish
+end
 ```
 
 ### Using [Fisherman](https://github.com/fisherman/fisherman)

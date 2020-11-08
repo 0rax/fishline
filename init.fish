@@ -10,14 +10,17 @@ if test -z "$FLINE_PATH"
     end
 end
 
-# Use FLINE_PATH to load internals, functions and segments
-if [ "$FLINE_PATH" = "$HOME/.config/fish/conf.d" -a -d "$HOME/.config/fisherman/fishline" ]
-    # Assumes fishline has been installed using fisherman on system without realpath
-    set -gx FLINE_PATH $HOME/.config/fisherman/fishline
-    set -gx fish_function_path $fish_function_path $FLINE_PATH/internals $FLINE_PATH/segments
-else
-    # Standard installation, add function loading path
-    set -gx fish_function_path $fish_function_path $FLINE_PATH/functions $FLINE_PATH/internals $FLINE_PATH/segments
+if set -q FLINE_INIT
+    set -g FLINE_INIT true
+    # Use FLINE_PATH to load internals, functions and segments
+    if [ "$FLINE_PATH" = "$HOME/.config/fish/conf.d" -a -d "$HOME/.config/fisherman/fishline" ]
+        # Assumes fishline has been installed using fisherman on system without realpath
+        set -gx FLINE_PATH $HOME/.config/fisherman/fishline
+        set -ga fish_function_path $FLINE_PATH/internals $FLINE_PATH/segments
+    else
+        # Standard installation, add function loading path
+        set -ga fish_function_path $FLINE_PATH/functions $FLINE_PATH/internals $FLINE_PATH/segments
+    end
 end
 
 # Load default color theme based on tput output

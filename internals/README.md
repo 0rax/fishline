@@ -1,4 +1,5 @@
 # Internals
+
 ## Internal functions
 
 - `__fishline_segment`
@@ -67,6 +68,9 @@
 - `FLINE_PROMPT`
   - Possible values: list of segment
   - Used by: `fishline`
+- `FLINE_INIT`
+  - Possible values: `true`
+  - Used by: `init.fish`
 
 ## Segment initialization variables (initialized for the session)
 

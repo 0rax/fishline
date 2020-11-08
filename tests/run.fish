@@ -62,9 +62,9 @@ while [ (count $args) -ge 0 ]
 end
 
 # Init fishline
-set -l FLINE_PATH (git rev-parse --show-toplevel)
+set FLINE_PATH (git rev-parse --show-toplevel)
 source $FLINE_PATH/init.fish
-set -l fish_function_path $fish_function_path $FLINE_PATH/tests
+set -a fish_function_path $FLINE_PATH/tests
 
 # Get segment list to check
 if [ "$all_seg" = "true" ]

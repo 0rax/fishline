@@ -10,7 +10,7 @@ if test -z "$FLINE_PATH"
     end
 end
 
-if set -q FLINE_INIT
+if not set -q FLINE_INIT
     set -g FLINE_INIT true
     # Use FLINE_PATH to load internals, functions and segments
     if [ "$FLINE_PATH" = "$HOME/.config/fish/conf.d" -a -d "$HOME/.config/fisherman/fishline" ]

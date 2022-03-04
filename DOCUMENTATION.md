@@ -1,4 +1,4 @@
-# Internals
+# Documentation
 
 ## Internal functions
 

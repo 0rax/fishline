@@ -24,8 +24,8 @@ Argument and Options:
     -s \$num Set the last command status exit code (should be internal \$status)
             This is only used by a limited number of segment but it should be
             set everytime you call fishline (if not needed set it to 0)
-    -l      left mode: generate a fish_prompt compatible prompt (default)
-    -r      right mode: generate a fish_right_prompt compatible prompt
+    -l      Left mode: generate a fish_prompt compatible prompt (default)
+    -r      Right mode: generate a fish_right_prompt compatible prompt
     -x      Print the list of availlable segment and exit
     -h      Print this help and exit
     -v      Print the software version and exit

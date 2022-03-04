@@ -1,14 +1,14 @@
 #!/usr/bin/env fish
 # -*-  mode:fish; tab-width:4  -*-
 
-set __256_blue              08f
-set __256_red               d00
-set __256_grey              4e4e4e
-set __256_green             5d5
-set __256_yellow            fd0
-set __256_purple            868
-set __256_cyan              688
-set __256_white             eee
+set -l __256_blue           08f
+set -l __256_red            d00
+set -l __256_grey           4e4e4e
+set -l __256_green          5d5
+set -l __256_yellow         fd0
+set -l __256_purple         868
+set -l __256_cyan           688
+set -l __256_white          eee
 
 # Color for PWD and FULLPWD segment
 set FLCLR_PWD_BG_HOME       $__256_blue

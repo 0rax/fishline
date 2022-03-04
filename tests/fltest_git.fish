@@ -10,7 +10,9 @@ function fltest_git
 
     set _OLDPWD $PWD
 
-    git clone https://github.com/0rax/fishline.git /tmp/fishline_test ^ /dev/null > /dev/null
+    git clone https://github.com/0rax/fishline.git /tmp/fishline_test 2> /dev/null
+    echo
+    echo
 
     echo "Context: Not in a git repository"
     cd /tmp
@@ -34,12 +36,12 @@ function fltest_git
     touch test_fishline
     git add test_fishline
     __fishline_test GIT
-    git rm -rf test_fishline > /dev/null ^ /dev/null
+    git rm -rf test_fishline > /dev/null 2> /dev/null
 
-    git commit -am "Testing GIT Segment" --allow-empty > /dev/null ^ /dev/null
-    git commit -am "Testing GIT Segment" --allow-empty > /dev/null ^ /dev/null
+    git commit -am "Testing GIT Segment" --allow-empty > /dev/null 2> /dev/null
+    git commit -am "Testing GIT Segment" --allow-empty > /dev/null 2> /dev/null
     echo "Context: with commits ahead and behind in branch dev"
-    git checkout -b dev > /dev/null ^ /dev/null
+    git checkout -b dev > /dev/null 2> /dev/null
     __fishline_test GIT
 
     echo "Context: EVERYTHING"
@@ -47,7 +49,7 @@ function fltest_git
     echo test_fishline >> LICENSE
     touch test_fishline
     git add test_fishline
-    git commit --allow-empty -m "Empty commit" > /dev/null ^ /dev/null
+    git commit --allow-empty -m "Empty commit" > /dev/null 2> /dev/null
     __fishline_test GIT
 
     rm -rf /tmp/fishline_test

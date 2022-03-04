@@ -38,13 +38,17 @@ end
 
 ### Using [Fisher](https://github.com/jorgebucaran/fisher)
 
-This is the easiest way to install `fishline` in your fish-shell environment. Fisherman will install it and link all the needed functions for you by running the following command:
+This is the easiest way to install `fishline` in your fish-shell environment. Fisher will install it and link all the needed functions for you by running the following command:
 
 ```sh
-fisher add 0rax/fishline
+fisher install 0rax/fishline
 ```
 
 This will allow you to use the `fishline` command directly and access to all the possible theming / configuration available as if you installed it manually.
+
+> **NOTE**:
+> When installing fishline using Fisher, a file named `fishline-init.fish` will be created in `~/.config/fish/conf.d`.
+> If you wish to configure, you should not update this file but instead create a new one to set your configuration variable, just make sure that this file is loaded after it (naming the file `fishline.fish` or `fishline-theme.fish` should work).
 
 ## Configuration
 

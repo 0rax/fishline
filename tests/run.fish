@@ -63,8 +63,9 @@ end
 
 # Init fishline
 set FLINE_PATH (git rev-parse --show-toplevel)
-source $FLINE_PATH/init.fish
+set -a fish_function_path $FLINE_PATH/functions
 set -a fish_function_path $FLINE_PATH/tests
+source $FLINE_PATH/conf.d/fishline-init.fish
 
 # Get segment list to check
 if [ "$all_seg" = "true" ]

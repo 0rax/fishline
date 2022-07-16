@@ -13,7 +13,11 @@ end
 source $FLINE_THEME_DIR/default_symbols.fish
 
 # Load default color theme depending on terminal capabilities
-if begin; [ (uname) != "Darwin" ]; and tty | grep tty > /dev/null; end
+if begin
+		[ (uname) != "Darwin" ]
+		and set -l out (tty)
+		and string match -eq "tty" $out
+	end
     # Emable a TTY safe default theme if a TTY is detected
 	source $FLINE_THEME_DIR/tty_compatible.fish
 else if begin; not command -s tput > /dev/null; or [ (tput colors) -lt 256 ]; end

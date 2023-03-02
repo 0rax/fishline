@@ -59,6 +59,11 @@ function fish_prompt
     fishline -s $status
 end
 ```
+Or do:
+
+```sh
+alias -s fish_prompt 'fishline -s $status'
+```
 
 [More informations about installation and configuration available in the wiki.](https://github.com/0rax/fishline/wiki "Fishline Wiki")
 
